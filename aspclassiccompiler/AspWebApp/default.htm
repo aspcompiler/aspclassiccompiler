@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+</head>
+<body>
+<p>This project contains some ASP Classic Compiler Samples Pages</p>
+<table>
+    <tr>
+        <td>Folder</td>
+        <td>File</td>
+        <td>Comments</td>
+    </tr>
+    <tr>
+        <td><a href="/components">Components</a></td>
+        <td></td>
+        <td>IIS 5 Platform SDK Sample. Need to install the COM components. Components like 
+            BrowserCap will not work because it requires the COM+ comtext to accesses the 
+            Request object. </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="/components/FileSystem.asp">FileSystem.asp</a></td>
+        <td>Works without registering any component. Need to grant ASP worker process account read/write access to the directory.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="/components/Tools.asp">Tools.asp</a></td>
+        <td>Tested in Windows XP. Failed to register the component in Vista.</td>
+    </tr>
+    <tr>
+        <td><a href="/Database">Database</a></td>
+        <td></td>
+        <td>IIS 5 Platform SDK Sample. Some the Access samples tested. Make sure that the OLEDB provider is installed. Need read/write access to the access.mdb in the directory.</td>
+    </tr>
+    <tr>
+        <td><a href="/Database">Simple</a></td>
+        <td></td>
+        <td>IIS 5 Platform SDK Sample. All the samples tested.</td>
+    </tr>
+        <tr>
+        <td><a href="/test">test</a></td>
+        <td></td>
+        <td>Some small samples used during development.</td>
+    </tr>
+</table>
+</body>
+</html>
