@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dlrsoft.Asp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
@@ -82,7 +83,9 @@
     <Content Include="components\Tiprot.Txt" />
     <Content Include="components\Tools.Asp" />
     <Content Include="test\datetest.asp" />
+    <Content Include="test\extension.asp" />
     <Content Include="test\ifnull.asp" />
+    <Content Include="test\imports.asp" />
     <Content Include="test\with.asp" />
     <Content Include="Database\AddDelete.asp" />
     <Content Include="Database\adovbs.inc" />
@@ -114,12 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\asp\Asp.csproj">
-      <Project>{F076A2D0-5200-42D7-9AEA-9E1260EFB138}</Project>
-      <Name>Asp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

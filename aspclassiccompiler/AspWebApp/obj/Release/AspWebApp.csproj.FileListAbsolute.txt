@@ -1,7 +1,6 @@
 F:\projects\dotnet35\VBParser80\AspWebApp\obj\Release\ResolveAssemblyReference.cache
 F:\projects\dotnet35\VBParser80\AspWebApp\bin\AspWebApp.dll
 F:\projects\dotnet35\VBParser80\AspWebApp\bin\AspWebApp.pdb
-F:\projects\dotnet35\VBParser80\AspWebApp\bin\Dlrsoft.Asp.dll
 F:\projects\dotnet35\VBParser80\AspWebApp\bin\Microsoft.Scripting.ExtensionAttribute.dll
 F:\projects\dotnet35\VBParser80\AspWebApp\bin\Microsoft.Dynamic.dll
 F:\projects\dotnet35\VBParser80\AspWebApp\bin\Dlrsoft.VBScript.dll
