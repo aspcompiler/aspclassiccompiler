@@ -1,0 +1,16 @@
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\AspProviders\bin\Debug\AspProviders.dll
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\AspProviders\bin\Debug\AspProviders.pdb
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\AspProviders\bin\Debug\StorageClient.dll
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\AspProviders\bin\Debug\StorageClient.pdb
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\AspProviders\bin\Debug\StorageClient.xml
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\AspProviders\obj\Debug\ResolveAssemblyReference.cache
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\AspProviders\obj\Debug\AspProviders.dll
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\AspProviders\obj\Debug\AspProviders.pdb
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\AspProviders\bin\Debug\AspProviders.dll
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\AspProviders\bin\Debug\AspProviders.pdb
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\AspProviders\bin\Debug\StorageClient.dll
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\AspProviders\bin\Debug\StorageClient.pdb
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\AspProviders\bin\Debug\StorageClient.xml
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\AspProviders\obj\Debug\ResolveAssemblyReference.cache
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\AspProviders\obj\Debug\AspProviders.dll
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\AspProviders\obj\Debug\AspProviders.pdb

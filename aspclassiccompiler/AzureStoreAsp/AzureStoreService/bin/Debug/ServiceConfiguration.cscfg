@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ServiceConfiguration serviceName="AzureStoreService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
+  <Role name="MVCAzureStore">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="AccountName" value="devstoreaccount1" />
+      <Setting name="AccountSharedKey" value="Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==" />
+      <Setting name="BlobStorageEndpoint" value="http://127.0.0.1:10000" />
+      <Setting name="TableStorageEndpoint" value="http://127.0.0.1:10002" />
+      <Setting name="allowInsecureRemoteEndpoints" value="false" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

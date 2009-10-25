@@ -1,0 +1,5 @@
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\bin\Release\StorageClient.dll
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\bin\Release\StorageClient.pdb
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\obj\Release\ResolveAssemblyReference.cache
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\obj\Release\StorageClient.dll
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\obj\Release\StorageClient.pdb

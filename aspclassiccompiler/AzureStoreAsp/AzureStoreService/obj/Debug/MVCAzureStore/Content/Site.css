@@ -1,0 +1,755 @@
+
+/*  9 of 12 Microsoft Internet Explorer Design Templates 
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 HTML TAGS
+	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body {
+	font-family:Arial, Tahoma, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	}
+
+p, li {
+	font-size:.75em;
+	line-height:160%;
+	}
+	
+a img {
+	border:none;
+	}
+
+/* HEADINGS */
+	
+h1,h2,h3,h4,h5,h6 {
+	margin:15px 0;
+	font-family:"trebuchet MS", verdana, sans-serif;
+	color:#e99400;
+	}
+
+.content-left h1, .content-right h1,
+.content-left h2, .content-right h2,
+.content-left h3, .content-right h3,
+.content-left h4, .content-right h4,
+.content-left h5, .content-right h5,
+.content-left h6, .content-right h6 {
+	color:#000;
+	margin:5px 0;
+	}
+	
+h1.first,
+h2.first,
+h3.first,
+h4.first,
+h5.first,
+h6.first {
+	margin-top:0;
+	}
+	
+h1 {
+	font-size:1.2em;
+	}
+	
+h2 {
+	font-size:1em;
+	}
+	
+h3 {
+	font-size:.9em;
+	background:url(images/bg-line.png) repeat-x bottom;
+	}
+	
+h4 {
+	font-size:.8em;
+	}
+	
+h5 {
+	font-size:.8em;
+	}
+	
+h6 {
+	font-size:.8em;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 FORMS
+	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+fieldset {
+	padding:10px 20px;
+	margin:15px 0;
+	position:relative;
+	}
+
+fieldset fieldset {
+	margin:10px 0;
+	width:90%;
+	}
+	
+legend {
+	font-weight:bold;
+	font-size:1em;
+	padding:10px;
+	color:#000;
+	margin:0 0 10px 30px;
+	font-family:"trebuchet MS", verdana, sans-serif;
+	}
+
+fieldset fieldset legend {
+	font-size:.8em;
+	}
+	
+.input-box {
+	display:block;
+	margin-bottom:5px;
+	vertical-align:top;
+	padding:2px;
+	color:#666666;
+	font-size:.8em;
+	border:1px solid #82b26e;
+	background:url(images/bg-input.png) no-repeat;
+	}
+
+label {
+	font-weight:bold;
+	font-size:.7em;
+	font-weight:bold;
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+
+.checkbox {	
+	margin:12px 0;
+	padding:4px 0 2px 3px;
+	border:1px dotted #585858;
+	width:95%;
+	}
+	
+.checkbox input {	
+	margin-right:6px;
+	margin-bottom:2px;
+	}
+
+.forgot-password {
+	margin:2px 0;
+	font-size:.65em;
+	}
+	
+input.button {
+	color:#FFF;
+	background:#317f0c url(images/bg-button.png) repeat-x;
+	border:2px groove #FFF;
+	font-size:.7em;
+	font-weight:bold;
+	padding:0 5px 2px 5px;
+	cursor:pointer;
+	}
+	
+input.button-big {
+	padding:6px 20px;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 LINKS
+	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+a:link {
+	color:#33840c;
+	text-decoration:underline;
+	}
+
+a:visited {
+	color:#72840c;
+	text-decoration:underline;
+	}
+
+a:hover {
+	text-decoration:none;
+	}
+
+a:active {
+	text-decoration:underline;
+	color:#86c400;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 HEADER
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.header-container {
+	position:relative;
+	padding:6px 0 0 0;
+	background:#373737;
+	color:#FFF;
+	border-bottom:1px dotted #585858;
+	min-height:1px;
+	_height:1px;
+	}
+
+/* LOGO */
+
+.logo {
+	font-size:1.5em;
+	width:60%;
+	float:left;
+	font-family:"trebuchet MS", verdana, sans-serif;
+	padding:5px 0 10px 15px;
+	letter-spacing:.2em;
+	}
+
+/* LOGO LINK */
+
+.logo a:link,
+.logo a:visited {
+	text-decoration:none;
+	color:#FFF;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 LOGIN
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.nav-login  {
+	font-size:.9em;
+	text-align:right;
+	margin:10px 15px 3px 0;
+	float:right;
+	width:20%;
+	}
+
+/* LOGIN LISTS */
+
+.nav-login ul {
+	margin:0;
+	padding:0;
+	}
+
+.nav-login li {
+	list-style:none;
+	padding:3px 0 3px 17px;
+	display:inline;
+	margin-left:15px;
+	background:url(images/bullet.png) no-repeat 0 4px;
+	}
+
+.nav-login li.first {
+	list-style:none;
+	margin-left:0;
+	}
+	
+/* LOGIN LINKS */
+
+.nav-login a:link,
+.nav-login a:visited{
+	color:#FFF;
+	text-decoration:none;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 MAIN NAV
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.nav-main {
+	margin:-41px 0 0 199px;
+	padding:12px 15px 0 15px;
+	background:#f6f6f6;
+	min-height:28px;
+	_height:28px;
+	border-top:1px dotted #7a7a7a;
+	border-bottom:1px dotted #7a7a7a;
+	border-left:1px dotted #7a7a7a;
+	}
+
+/* MAIN NAV LISTS */
+
+.nav-main ul {
+	margin:0;
+	padding:0;
+	}
+
+.nav-main li {
+	list-style:none;
+	float:left;
+	background:none;
+	padding:0;
+	}
+
+.nav-main li a {
+	display:block;
+	padding:0 10px;
+	border-right:1px dotted #d2d2d2;
+	}
+
+.nav-main li.first a {
+	padding-left:0;
+	}
+	
+/* NAV MAIN LINKS */
+
+.nav-main a:link,
+.nav-main a:visited {
+	color:#33840c;
+	text-decoration:none;
+	}
+
+.nav-main .active a:link,
+.nav-main .active a:visited {
+	color:#000;
+	}
+
+.nav-main a:hover {
+	text-decoration:underline;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 FOOTER
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.footer {
+	padding:10px 0;
+	_height:1px;
+	background:#373737;
+	clear:both;
+	}
+
+.nav-footer {
+	position:relative;
+	_height:1px;
+	margin:0 200px;
+	text-align:center;
+	clear:both;
+	}
+
+.nav-footer ul{
+	padding:0;
+	margin:0;
+	text-align:center;
+	}
+
+.nav-footer li{
+	background:none;
+	display:inline;
+	border-right:1px dotted #686868;
+	padding:0 10px;
+	}
+
+.nav-footer li.first {
+	border-left:1px dotted #686868;
+	}
+	
+.copyright {
+	color:#999;
+	font-size:.7em;
+	clear:both;
+	margin:5px 0 0 0;
+	}
+
+.nav-footer a:link,
+.nav-footer a:visited {
+	color:#CCC;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 POSTER
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.poster-container {
+	background:url(images/bg-poster-tile.jpg) repeat-x;
+	min-height:200px;
+	_height:200px;
+	margin-top:-1px;
+	}
+
+.poster-container-no-image {
+	background:url(images/bg-poster-tile.jpg) repeat-x;
+	min-height:70px;
+	_height:70px;
+	margin-top:-1px;
+	}
+	
+.poster-inner {
+	background:url(images/bg-poster.jpg) no-repeat left top;
+	font-family:"trebuchet MS", verdana, sans-serif;
+	min-height:70px;
+	_height:70px;
+	}
+
+.poster-photo {
+	background:url(images/bg-poster-photo.jpg) no-repeat left;
+	min-height:170px;
+	_height:170px;
+	padding:30px 30% 0 200px;
+	font-style:italic;
+	}
+
+.poster-container h1 {
+	margin:0;
+	font-size:1.2em;
+	color:#000;
+	}
+
+.poster-container p {
+	margin:10px 0 0 0;
+	line-height:normal;
+	font-size:1em;
+	}
+
+/* POSTER LINKS */
+
+.poster-links {
+	font-weight:bold;
+	}
+	
+.poster-container a:link,
+.poster-container a:visited {
+	color:#33840c;
+	}
+
+.poster-container a:hover {
+	text-decoration:none;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 BREADCRUMB
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.breadcrumb {
+	min-height:1px;
+	_height:1px;
+	padding:0 0 15px 0;
+	margin:0 0 15px 0;
+	font-size:.7em;
+	border-bottom:1px dotted #686868;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 PRIMARY LAYOUT STYLES 
+	 	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+  
+.content-container {
+	position:relative;
+	_height:1px;
+	min-height:1px;
+	background:url(images/bg-column-left.png) repeat-y;
+	}
+
+.content-container-inner {
+	background:url(images/bg-column-right.png) repeat-y right;
+	_height:1px;
+	min-height:1px;
+	padding:0 200px;
+	position:relative;
+	}
+	
+.content-main {
+	padding:15px 2% 20px 2%;
+	position:relative;
+	min-height:1px;
+	_height:1px;
+	float:left;
+	width:96%;
+	}
+
+.content-left {
+	padding:20px 10px;
+	float:left;
+	width:180px;
+	margin-top:-1px;
+	position:relative;
+	margin-left:-100%;
+	right:200px;
+	_left:200px;
+	border-top:1px dotted #797979;
+	}
+
+.content-right {
+	padding:15px 10px 20px 10px;
+	float:left;
+	width:180px;
+	position:relative;
+	margin-right:-200px;
+	}
+
+.ads {
+	text-align:center;
+	margin:20px 0;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 SIDE BUCKET
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.side-bucket {
+	margin-bottom:20px;
+	line-height:normal;
+	}
+
+/* SIDE BUCKET LISTS */
+
+.side-bucket ul {
+	margin:0;
+	padding:0;
+	_height:1px;
+	}
+
+.side-bucket li {
+	list-style:none;
+	border-bottom:1px dotted #7a7a7a;
+	background-position:0 4px;
+	}
+
+.side-bucket li.first {
+	border-top:1px dotted #7a7a7a;
+	}
+	
+/* SIDE BUCKET LINKS */
+
+.side-bucket a:link,
+.side-bucket a:visited {
+	text-decoration:none;
+	display:block;
+	_display:inline;
+	}
+	
+.side-bucket a:hover {
+	text-decoration:underline;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 PHOTOS & CAPTIONS
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.photo-container {
+	padding:10px;
+	border:1px dotted #7a7a7a;
+	}
+
+.photo-container img {
+	display:block;
+	border:1px solid #666;
+	}
+	
+.photo-caption {
+	font-size:.7em;
+	padding:10px 10px 0 10px;
+	text-align:center;
+	color:#999;
+	font-style:italic
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 THREE-COLUMN SECTION
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.three-column-container {
+	margin:10px 0px;
+	}
+
+.three-column-left,
+.three-column-right,
+.three-column-middle {
+	float:left;
+	width:30%;
+	margin-right:5%;
+	}
+
+.three-column-right {
+	margin-right:0;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 DATA TABLES
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+table.data-table {
+	background:#f6f6f6;
+	font-size:.7em;
+	border-top:1px dotted #7a7a7a;
+	border-left:1px dotted #7a7a7a;
+	}
+
+table.data-table caption{
+	background:#b6b6b6;
+	padding:10px;
+	text-align:center;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px dotted #7a7a7a;
+	border-bottom:none;
+	}
+
+table.data-table td,
+table.data-table th{
+	padding:8px;
+	border-right:1px dotted #7a7a7a;
+	border-bottom:1px dotted #7a7a7a;
+	}
+
+table.data-table th{
+	text-align:left;
+	font-family:Arial, Helvetica, sans-serif;
+	background:#ececec;
+	}
+	
+table.data-table td{
+	}
+
+table.data-table tr.row-alternating td{
+	background:#e0e0e0;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 LISTS
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+li {
+	list-style:none;
+	background:url(images/bullet.png) no-repeat 0 5px;
+	padding:3px 0 3px 17px;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 MISC STYLES
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.none {
+	display:none;
+	}
+
+.clear {
+	clear:both;
+	font-size:1px;
+	margin:0;
+	padding:0;
+	}
+
+.align-left {
+	float:left;
+	margin:0 20px 15px 0;
+	}
+
+.align-right {
+	float:right;
+	margin:0 0 15px 20px;
+	}
+
+.align-middle {
+	vertical-align:middle;
+	}
+	
+.inline {
+	display:inline;
+	}
+
+.no-margin {
+	margin:0;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 MODIFIED
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.login 
+{
+    margin:auto auto;
+}
+
+.login input[type=text], .login input[type=password]
+{
+    width: 10em;
+    margin: 0.5em;
+}
+
+.content-main
+{
+    _height:400px;
+    min-height:400px;
+}
+
+.product-category
+{
+    color: #666666;
+}
+
+.product-list
+{
+    padding:0.25em;
+    border: solid 1px #999;
+    font-size:10pt;
+    width:100%;
+    margin-top:0.5em;
+    margin-bottom: 0.5em;
+    height:150px;
+}
+
+.identity
+{
+    margin-left:0.25em;
+    max-width:6.5em;
+    display:inline-block;
+    overflow:hidden;
+    vertical-align:middle;
+}
+
+.login label
+{
+    display: inline;
+}
+
+label 
+{
+	font-size:1em;
+}
+
+.role label
+{
+    margin:1em;
+}
+
+.role input
+{
+    margin:1em 0 0.5em 0;
+    vertical-align:middle;
+}
+
+.login-status, .login-status iframe
+{
+    height: 2em !important;
+    width: 5em !important;
+}

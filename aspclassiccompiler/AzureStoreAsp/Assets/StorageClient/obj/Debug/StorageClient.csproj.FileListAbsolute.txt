@@ -1,0 +1,10 @@
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\StorageClient\bin\Debug\StorageClient.dll
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\StorageClient\bin\Debug\StorageClient.pdb
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\StorageClient\obj\Debug\ResolveAssemblyReference.cache
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\StorageClient\obj\Debug\StorageClient.dll
+G:\TrainingKits\WindowsAzurePlatformKit\Labs\BuildingMVCAppsWithWindowsAzure\Assets\StorageClient\obj\Debug\StorageClient.pdb
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\bin\Debug\StorageClient.dll
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\bin\Debug\StorageClient.pdb
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\obj\Debug\ResolveAssemblyReference.cache
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\obj\Debug\StorageClient.dll
+F:\projects\dotnet35\VBParser80\AzureStoreAsp\Assets\StorageClient\obj\Debug\StorageClient.pdb
