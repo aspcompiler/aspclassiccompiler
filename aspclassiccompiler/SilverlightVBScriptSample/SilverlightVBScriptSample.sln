@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightApplication1", "SilverlightApplication1\SilverlightApplication1.csproj", "{07C38CED-F1AC-4CA3-803F-22C22FD0AEF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightApplication1.Web", "SilverlightApplication1.Web\SilverlightApplication1.Web.csproj", "{66FC416D-ADB5-4479-B731-EA0260086BCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Silverlight Debug|Any CPU = Silverlight Debug|Any CPU
+		Silverlight Release|Any CPU = Silverlight Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07C38CED-F1AC-4CA3-803F-22C22FD0AEF1}.Debug|Any CPU.ActiveCfg = Silverlight Debug|Any CPU
+		{07C38CED-F1AC-4CA3-803F-22C22FD0AEF1}.Debug|Any CPU.Build.0 = Silverlight Debug|Any CPU
+		{07C38CED-F1AC-4CA3-803F-22C22FD0AEF1}.Release|Any CPU.ActiveCfg = Silverlight Debug|Any CPU
+		{07C38CED-F1AC-4CA3-803F-22C22FD0AEF1}.Silverlight Debug|Any CPU.ActiveCfg = Silverlight Release|Any CPU
+		{07C38CED-F1AC-4CA3-803F-22C22FD0AEF1}.Silverlight Debug|Any CPU.Build.0 = Silverlight Release|Any CPU
+		{07C38CED-F1AC-4CA3-803F-22C22FD0AEF1}.Silverlight Release|Any CPU.ActiveCfg = Silverlight Release|Any CPU
+		{07C38CED-F1AC-4CA3-803F-22C22FD0AEF1}.Silverlight Release|Any CPU.Build.0 = Silverlight Release|Any CPU
+		{66FC416D-ADB5-4479-B731-EA0260086BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66FC416D-ADB5-4479-B731-EA0260086BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66FC416D-ADB5-4479-B731-EA0260086BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66FC416D-ADB5-4479-B731-EA0260086BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66FC416D-ADB5-4479-B731-EA0260086BCA}.Silverlight Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66FC416D-ADB5-4479-B731-EA0260086BCA}.Silverlight Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66FC416D-ADB5-4479-B731-EA0260086BCA}.Silverlight Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{66FC416D-ADB5-4479-B731-EA0260086BCA}.Silverlight Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
