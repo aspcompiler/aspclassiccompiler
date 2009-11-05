@@ -6,7 +6,105 @@ Dlrsoft.VBParser
 </name>
 </assembly>
 <members>
-<member name="P:Dlrsoft.VBScript.Parser.Scanner.TabSpaces">
+<member name="T:Dlrsoft.VBScript.Parser.TreeCollection`1">
+	<summary>
+ A collection of a particular type of trees
+ </summary>
+	<typeparam name="T">The type of tree the collection contains.</typeparam>
+</member><member name="P:Dlrsoft.VBScript.Parser.EnumValueDeclaration.Name">
+	<summary>
+ The name of the enumerated value.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.EnumValueDeclaration.EqualsLocation">
+	<summary>
+ The location of the '=', if any.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.EnumValueDeclaration.Expression">
+	<summary>
+ The enumerated value, if any.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.EnumValueDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.Name,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for an enumerated value.
+ </summary>
+	<param name="attributes">The attributes on the declaration.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="equalsLocation">The location of the '=', if any.</param>
+	<param name="expression">The enumerated value, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.EnumValueDeclaration">
+	<summary>
+ A parse tree for an enumerated value declaration.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ExpressionCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Expression},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new collection of expressions.
+ </summary>
+	<param name="expressions">The expressions in the collection.</param>
+	<param name="commaLocations">The locations of the commas in the collection.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ExpressionCollection">
+	<summary>
+ A read-only collection of expressions.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.SpecialName.#ctor(Dlrsoft.VBScript.Parser.TreeType,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new special name parse tree.
+ </summary>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.SpecialName">
+	<summary>
+ A parse tree for a special name (i.e. 'Global').
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.GotoStatement.#ctor(Dlrsoft.VBScript.Parser.SimpleName,System.Boolean,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for a GoTo statement.
+ </summary>
+	<param name="name">The label to branch to, if any.</param>
+	<param name="isLineNumber">Whether the label is a line number.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.GotoStatement">
+	<summary>
+ A parse tree for a GoTo statement.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.RemoveHandlerStatement.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a RemoveHandler statement.
+ </summary>
+	<param name="name">The name of the event.</param>
+	<param name="commaLocation">The location of the ','.</param>
+	<param name="delegateExpression">The delegate expression.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.RemoveHandlerStatement">
+	<summary>
+ A parse tree for a RemoveHandler statement.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ResumeStatement.ResumeType">
+	<summary>
+ The type of the Resume statement.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ResumeStatement.NextLocation">
+	<summary>
+ The location of the 'Next', if any.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ResumeStatement.#ctor(Dlrsoft.VBScript.Parser.ResumeType,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,System.Boolean,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for a Resume statement.
+ </summary>
+	<param name="resumeType">The type of the Resume statement.</param>
+	<param name="nextLocation">The location of the 'Next', if any.</param>
+	<param name="name">The label name, if any.</param>
+	<param name="isLineNumber">Whether the label is a line number.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ResumeStatement">
+	<summary>
+ A parse tree for a Resume statement.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.Scanner.TabSpaces">
 	<summary>
  How many columns a tab character should be considered.
  </summary>
@@ -122,107 +220,9 @@ Dlrsoft.VBParser
 	<summary>
  A string literal.
  </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.TreeCollection`1">
-	<summary>
- A collection of a particular type of trees
- </summary>
-	<typeparam name="T">The type of tree the collection contains.</typeparam>
-</member><member name="M:Dlrsoft.VBScript.Parser.ExpressionCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Expression},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new collection of expressions.
- </summary>
-	<param name="expressions">The expressions in the collection.</param>
-	<param name="commaLocations">The locations of the commas in the collection.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ExpressionCollection">
-	<summary>
- A read-only collection of expressions.
- </summary>
 </member><member name="T:Dlrsoft.VBScript.Parser.IntrinsicType">
 	<summary>
  The type of an intrinsic type name.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.EnumValueDeclaration.Name">
-	<summary>
- The name of the enumerated value.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.EnumValueDeclaration.EqualsLocation">
-	<summary>
- The location of the '=', if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.EnumValueDeclaration.Expression">
-	<summary>
- The enumerated value, if any.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.EnumValueDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.Name,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for an enumerated value.
- </summary>
-	<param name="attributes">The attributes on the declaration.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="equalsLocation">The location of the '=', if any.</param>
-	<param name="expression">The enumerated value, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.EnumValueDeclaration">
-	<summary>
- A parse tree for an enumerated value declaration.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.SpecialName.#ctor(Dlrsoft.VBScript.Parser.TreeType,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new special name parse tree.
- </summary>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.SpecialName">
-	<summary>
- A parse tree for a special name (i.e. 'Global').
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.GotoStatement.#ctor(Dlrsoft.VBScript.Parser.SimpleName,System.Boolean,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a parse tree for a GoTo statement.
- </summary>
-	<param name="name">The label to branch to, if any.</param>
-	<param name="isLineNumber">Whether the label is a line number.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.GotoStatement">
-	<summary>
- A parse tree for a GoTo statement.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.RemoveHandlerStatement.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a RemoveHandler statement.
- </summary>
-	<param name="name">The name of the event.</param>
-	<param name="commaLocation">The location of the ','.</param>
-	<param name="delegateExpression">The delegate expression.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.RemoveHandlerStatement">
-	<summary>
- A parse tree for a RemoveHandler statement.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ResumeStatement.ResumeType">
-	<summary>
- The type of the Resume statement.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ResumeStatement.NextLocation">
-	<summary>
- The location of the 'Next', if any.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ResumeStatement.#ctor(Dlrsoft.VBScript.Parser.ResumeType,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,System.Boolean,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a parse tree for a Resume statement.
- </summary>
-	<param name="resumeType">The type of the Resume statement.</param>
-	<param name="nextLocation">The location of the 'Next', if any.</param>
-	<param name="name">The label name, if any.</param>
-	<param name="isLineNumber">Whether the label is a line number.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ResumeStatement">
-	<summary>
- A parse tree for a Resume statement.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.Location.Index">
 	<summary>
@@ -300,9 +300,36 @@ Dlrsoft.VBParser
 	<summary>
  Stores source code line and column information.
  </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.BlockType">
+</member><member name="P:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.AddHandlerLocation">
 	<summary>
- The type a block declaration.
+ The location of the 'AddHandler'.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.Parameters">
+	<summary>
+ The accessor's parameters.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.Statements">
+	<summary>
+ The statements in the accessor.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.EndStatement">
+	<summary>
+ The End declaration for the accessor.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a property accessor.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="addHandlerLocation">The location of the 'AddHandler'.</param>
+	<param name="parameters">The parameters of the declaration.</param>
+	<param name="statements">The statements in the declaration.</param>
+	<param name="endStatement">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration">
+	<summary>
+ A parse tree for a AddHandler property accessor.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ModifiedDeclaration.Attributes">
 	<summary>
@@ -358,37 +385,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.Expression">
 	<summary>
  A parse tree for an expression.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.AddHandlerLocation">
-	<summary>
- The location of the 'AddHandler'.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.Parameters">
-	<summary>
- The accessor's parameters.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.Statements">
-	<summary>
- The statements in the accessor.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.EndStatement">
-	<summary>
- The End declaration for the accessor.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a property accessor.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="addHandlerLocation">The location of the 'AddHandler'.</param>
-	<param name="parameters">The parameters of the declaration.</param>
-	<param name="statements">The statements in the declaration.</param>
-	<param name="endStatement">The end block declaration, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.AddHandlerAccessorDeclaration">
-	<summary>
- A parse tree for a AddHandler property accessor.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ForEachBlockStatement.EachLocation">
 	<summary>
@@ -451,108 +447,9 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a named type.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.DecimalLiteralToken.Literal">
+</member><member name="T:Dlrsoft.VBScript.Parser.BlockType">
 	<summary>
- The literal value.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.DecimalLiteralToken.TypeCharacter">
-	<summary>
- The type character of the literal.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.DecimalLiteralToken.#ctor(System.Decimal,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new decimal literal token.
- </summary>
-	<param name="literal">The literal value.</param>
-	<param name="typeCharacter">The literal's type character.</param>
-	<param name="span">The location of the literal.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.DecimalLiteralToken">
-	<summary>
- A decimal literal token.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.EndOfStreamToken.#ctor(Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Creates a new end-of-stream token.
- </summary>
-	<param name="span">The location of the end of the stream.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.EndOfStreamToken">
-	<summary>
- A token representing the end of the file.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ArgumentCollection.RightParenthesisLocation">
-	<summary>
- The location of the ')'.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ArgumentCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Argument},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new argument collection.
- </summary>
-	<param name="arguments">The arguments in the collection.</param>
-	<param name="commaLocations">The location of the commas in the collection.</param>
-	<param name="rightParenthesisLocation">The location of the ')'.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ArgumentCollection">
-	<summary>
- A read-only collection of arguments.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.RangeCaseClause.RangeExpression">
-	<summary>
- The range expression.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.RangeCaseClause.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new range case clause parse tree.
- </summary>
-	<param name="rangeExpression">The range expression.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.RangeCaseClause">
-	<summary>
- A parse tree for a case clause that compares against a range of values.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.NewAggregateExpression.Target">
-	<summary>
- The target array type to create.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.NewAggregateExpression.Initializer">
-	<summary>
- The initializer for the array.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.NewAggregateExpression.#ctor(Dlrsoft.VBScript.Parser.ArrayTypeName,Dlrsoft.VBScript.Parser.AggregateInitializer,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- The constructor for a New array expression parse tree.
- </summary>
-	<param name="target">The target array type to create.</param>
-	<param name="initializer">The initializer for the array.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.NewAggregateExpression">
-	<summary>
- A parse tree for a New array expression.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ImportsDeclaration.ImportMembers">
-	<summary>
- The members imported.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ImportsDeclaration.#ctor(Dlrsoft.VBScript.Parser.ImportCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a parse tree for an Imports declaration.
- </summary>
-	<param name="importMembers">The members imported.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ImportsDeclaration">
-	<summary>
- A parse tree for an Imports declaration.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ImportCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Import},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a collection of imports.
- </summary>
-	<param name="importMembers">The imports in the collection.</param>
-	<param name="commaLocations">The location of the commas.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ImportCollection">
-	<summary>
- A read-only collection of imports.
+ The type a block declaration.
  </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.FunctionDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.NameCollection,Dlrsoft.VBScript.Parser.NameCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
 	<summary>
@@ -576,6 +473,37 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.FunctionDeclaration">
 	<summary>
  A parse tree for a Function declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ImportsDeclaration.ImportMembers">
+	<summary>
+ The members imported.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ImportsDeclaration.#ctor(Dlrsoft.VBScript.Parser.ImportCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for an Imports declaration.
+ </summary>
+	<param name="importMembers">The members imported.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ImportsDeclaration">
+	<summary>
+ A parse tree for an Imports declaration.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ModuleDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a Module declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="declarations">The declarations in the block.</param>
+	<param name="endStatement">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ModuleDeclaration">
+	<summary>
+ A parse tree for a Module declaration.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.PropertyDeclaration.ImplementsList">
 	<summary>
@@ -609,6 +537,36 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.PropertyDeclaration">
 	<summary>
  A parse tree for a property declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.NewAggregateExpression.Target">
+	<summary>
+ The target array type to create.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.NewAggregateExpression.Initializer">
+	<summary>
+ The initializer for the array.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.NewAggregateExpression.#ctor(Dlrsoft.VBScript.Parser.ArrayTypeName,Dlrsoft.VBScript.Parser.AggregateInitializer,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ The constructor for a New array expression parse tree.
+ </summary>
+	<param name="target">The target array type to create.</param>
+	<param name="initializer">The initializer for the array.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.NewAggregateExpression">
+	<summary>
+ A parse tree for a New array expression.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ImportCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Import},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a collection of imports.
+ </summary>
+	<param name="importMembers">The imports in the collection.</param>
+	<param name="commaLocations">The location of the commas.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ImportCollection">
+	<summary>
+ A read-only collection of imports.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.Modifier.ModifierType">
 	<summary>
@@ -696,50 +654,63 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a Finally statement.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ModuleDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+</member><member name="P:Dlrsoft.VBScript.Parser.DecimalLiteralToken.Literal">
 	<summary>
- Constructs a new parse tree for a Module declaration.
+ The literal value.
  </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="declarations">The declarations in the block.</param>
-	<param name="endStatement">The end block declaration, if any.</param>
+</member><member name="P:Dlrsoft.VBScript.Parser.DecimalLiteralToken.TypeCharacter">
+	<summary>
+ The type character of the literal.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.DecimalLiteralToken.#ctor(System.Decimal,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new decimal literal token.
+ </summary>
+	<param name="literal">The literal value.</param>
+	<param name="typeCharacter">The literal's type character.</param>
+	<param name="span">The location of the literal.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.DecimalLiteralToken">
+	<summary>
+ A decimal literal token.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.EndOfStreamToken.#ctor(Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Creates a new end-of-stream token.
+ </summary>
+	<param name="span">The location of the end of the stream.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.EndOfStreamToken">
+	<summary>
+ A token representing the end of the file.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ArgumentCollection.RightParenthesisLocation">
+	<summary>
+ The location of the ')'.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ArgumentCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Argument},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new argument collection.
+ </summary>
+	<param name="arguments">The arguments in the collection.</param>
+	<param name="commaLocations">The location of the commas in the collection.</param>
+	<param name="rightParenthesisLocation">The location of the ')'.</param>
 	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ModuleDeclaration">
+</member><member name="T:Dlrsoft.VBScript.Parser.ArgumentCollection">
 	<summary>
- A parse tree for a Module declaration.
+ A read-only collection of arguments.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CommentToken.IsREM">
+</member><member name="P:Dlrsoft.VBScript.Parser.RangeCaseClause.RangeExpression">
 	<summary>
- Whether the comment was preceded by REM.
+ The range expression.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CommentToken.Comment">
+</member><member name="M:Dlrsoft.VBScript.Parser.RangeCaseClause.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span)">
 	<summary>
- The text of the comment.
+ Constructs a new range case clause parse tree.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.CommentToken.#ctor(System.String,System.Boolean,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new comment token.
- </summary>
-	<param name="comment">The comment value.</param>
-	<param name="isREM">Whether the comment was preceded by REM.</param>
-	<param name="span">The location of the comment.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.CommentToken">
-	<summary>
- A comment token.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.EmptyDeclaration.#ctor(Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for an empty declaration.
- </summary>
+	<param name="rangeExpression">The range expression.</param>
 	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.EmptyDeclaration">
+</member><member name="T:Dlrsoft.VBScript.Parser.RangeCaseClause">
 	<summary>
- A parse tree for an empty declaration.
+ A parse tree for a case clause that compares against a range of values.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.GenericQualifiedExpression.Base">
 	<summary>
@@ -759,6 +730,33 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.GenericQualifiedExpression">
 	<summary>
  A parse tree for a qualified name expression.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.EmptyDeclaration.#ctor(Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for an empty declaration.
+ </summary>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.EmptyDeclaration">
+	<summary>
+ A parse tree for an empty declaration.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.InterfaceDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a Interface declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="typeParameters">The type parameters on the declaration, if any.</param>
+	<param name="declarations">The declarations in the block.</param>
+	<param name="endStatement">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.InterfaceDeclaration">
+	<summary>
+ A parse tree for a Interface declaration.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ParentheticalExpression.RightParenthesisLocation">
 	<summary>
@@ -861,23 +859,6 @@ Dlrsoft.VBParser
 	<summary>
  A read-only collection of statements.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.InterfaceDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a Interface declaration.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="typeParameters">The type parameters on the declaration, if any.</param>
-	<param name="declarations">The declarations in the block.</param>
-	<param name="endStatement">The end block declaration, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.InterfaceDeclaration">
-	<summary>
- A parse tree for a Interface declaration.
- </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.VariableDeclarator.VariableNames">
 	<summary>
  The variable names being declared.
@@ -922,19 +903,39 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a variable declarator (e.g. "x As Integer")
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.DateLiteralToken.Literal">
+</member><member name="P:Dlrsoft.VBScript.Parser.CommentToken.IsREM">
 	<summary>
- The literal value.
+ Whether the comment was preceded by REM.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.DateLiteralToken.#ctor(System.DateTime,Dlrsoft.VBScript.Parser.Span)">
+</member><member name="P:Dlrsoft.VBScript.Parser.CommentToken.Comment">
 	<summary>
- Constructs a new date literal instance.
+ The text of the comment.
  </summary>
-	<param name="literal">The literal value.</param>
-	<param name="span">The location of the literal.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.DateLiteralToken">
+</member><member name="M:Dlrsoft.VBScript.Parser.CommentToken.#ctor(System.String,System.Boolean,Dlrsoft.VBScript.Parser.Span)">
 	<summary>
- A date/time literal.
+ Constructs a new comment token.
+ </summary>
+	<param name="comment">The comment value.</param>
+	<param name="isREM">Whether the comment was preceded by REM.</param>
+	<param name="span">The location of the comment.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.CommentToken">
+	<summary>
+ A comment token.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.InheritsDeclaration.InheritedTypes">
+	<summary>
+ The list of types.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.InheritsDeclaration.#ctor(Dlrsoft.VBScript.Parser.TypeNameCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for an Inherits declaration.
+ </summary>
+	<param name="inheritedTypes">The types inherited or implemented.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.InheritsDeclaration">
+	<summary>
+ A parse tree for an Inherits declaration.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.CallOrIndexExpression.TargetExpression">
 	<summary>
@@ -1103,49 +1104,19 @@ Dlrsoft.VBParser
 	<summary>
  A collection of type parameters.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.InheritsDeclaration.InheritedTypes">
+</member><member name="P:Dlrsoft.VBScript.Parser.DateLiteralToken.Literal">
 	<summary>
- The list of types.
+ The literal value.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.InheritsDeclaration.#ctor(Dlrsoft.VBScript.Parser.TypeNameCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+</member><member name="M:Dlrsoft.VBScript.Parser.DateLiteralToken.#ctor(System.DateTime,Dlrsoft.VBScript.Parser.Span)">
 	<summary>
- Constructs a parse tree for an Inherits declaration.
+ Constructs a new date literal instance.
  </summary>
-	<param name="inheritedTypes">The types inherited or implemented.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.InheritsDeclaration">
+	<param name="literal">The literal value.</param>
+	<param name="span">The location of the literal.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.DateLiteralToken">
 	<summary>
- A parse tree for an Inherits declaration.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CastTypeExpression.LeftParenthesisLocation">
-	<summary>
- The location of the '('.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CastTypeExpression.CommaLocation">
-	<summary>
- The location of the ','.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CastTypeExpression.Target">
-	<summary>
- The target type for the operand.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CastTypeExpression.RightParenthesisLocation">
-	<summary>
- The location of the ')'.
- </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.CastTypeExpression">
-	<summary>
- A parse tree for a CType or DirectCast expression.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.NothingExpression.#ctor(Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new parse tree for Nothing.
- </summary>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.NothingExpression">
-	<summary>
- A parse tree for Nothing.
+ A date/time literal.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.CustomEventDeclaration.CustomLocation">
 	<summary>
@@ -1182,6 +1153,35 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.CustomEventDeclaration">
 	<summary>
  A parse tree for a custom event declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.CastTypeExpression.LeftParenthesisLocation">
+	<summary>
+ The location of the '('.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.CastTypeExpression.CommaLocation">
+	<summary>
+ The location of the ','.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.CastTypeExpression.Target">
+	<summary>
+ The target type for the operand.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.CastTypeExpression.RightParenthesisLocation">
+	<summary>
+ The location of the ')'.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.CastTypeExpression">
+	<summary>
+ A parse tree for a CType or DirectCast expression.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.NothingExpression.#ctor(Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new parse tree for Nothing.
+ </summary>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.NothingExpression">
+	<summary>
+ A parse tree for Nothing.
  </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.NameCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Name},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Span)">
 	<summary>
@@ -1301,27 +1301,6 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a While block statement.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.TypeArgumentCollection.OfLocation">
-	<summary>
- The location of the 'Of'.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.TypeArgumentCollection.RightParenthesisLocation">
-	<summary>
- The location of the ')'.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.TypeArgumentCollection.#ctor(Dlrsoft.VBScript.Parser.Location,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.TypeName},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new collection of type arguments.
- </summary>
-	<param name="ofLocation">The location of the 'Of'.</param>
-	<param name="arguments">The type arguments in the collection</param>
-	<param name="commaLocations">The locations of the commas.</param>
-	<param name="rightParenthesisLocation">The location of the right parenthesis.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.TypeArgumentCollection">
-	<summary>
- A collection of type arguments.
- </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.TypeParameter.TypeName">
 	<summary>
  The name of the type parameter.
@@ -1345,6 +1324,27 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.TypeParameter">
 	<summary>
  A parse tree for a type parameter.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.TypeArgumentCollection.OfLocation">
+	<summary>
+ The location of the 'Of'.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.TypeArgumentCollection.RightParenthesisLocation">
+	<summary>
+ The location of the ')'.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.TypeArgumentCollection.#ctor(Dlrsoft.VBScript.Parser.Location,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.TypeName},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new collection of type arguments.
+ </summary>
+	<param name="ofLocation">The location of the 'Of'.</param>
+	<param name="arguments">The type arguments in the collection</param>
+	<param name="commaLocations">The locations of the commas.</param>
+	<param name="rightParenthesisLocation">The location of the right parenthesis.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.TypeArgumentCollection">
+	<summary>
+ A collection of type arguments.
  </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.Parser.Dispose">
 	<summary>
@@ -1400,64 +1400,6 @@ Dlrsoft.VBParser
  A parser for the Visual Basic .NET language based on the grammar
  documented in the Language Specification.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Argument.Name">
-	<summary>
- The name of the argument, if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Argument.ColonEqualsLocation">
-	<summary>
- The location of the ':=', if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Argument.Expression">
-	<summary>
- The argument, if any.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.Argument.#ctor(Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new parse tree for an argument.
- </summary>
-	<param name="name">The name of the argument, if any.</param>
-	<param name="colonEqualsLocation">The location of the ':=', if any.</param>
-	<param name="expression">The expression, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.Argument">
-	<summary>
- A parse tree for an argument to a call or index.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.AttributeType">
-	<summary>
- The target type of the attribute.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.AttributeTypeLocation">
-	<summary>
- The location of the attribute type, if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.ColonLocation">
-	<summary>
- The location of the ':', if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.Name">
-	<summary>
- The name of the attribute being applied.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.Arguments">
-	<summary>
- The arguments to the attribute.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.Attribute.#ctor(Dlrsoft.VBScript.Parser.AttributeTypes,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Name,Dlrsoft.VBScript.Parser.ArgumentCollection,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new attribute parse tree.
- </summary>
-	<param name="attributeType">The target type of the attribute.</param>
-	<param name="attributeTypeLocation">The location of the attribute type.</param>
-	<param name="colonLocation">The location of the ':'.</param>
-	<param name="name">The name of the attribute being applied.</param>
-	<param name="arguments">The arguments to the attribute.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.Attribute">
-	<summary>
- A parse tree for an attribute usage.
- </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.EndBlockDeclaration.EndType">
 	<summary>
  The type of block the declaration ends.
@@ -1477,58 +1419,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.EndBlockDeclaration">
 	<summary>
  A parse tree for an End declaration.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.CTypeExpression.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new parse tree for a CType expression.
- </summary>
-	<param name="leftParenthesisLocation">The location of the '('.</param>
-	<param name="operand">The expression to be converted.</param>
-	<param name="commaLocation">The location of the ','.</param>
-	<param name="target">The target type of the conversion.</param>
-	<param name="rightParenthesisLocation">The location of the ')'.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.CTypeExpression">
-	<summary>
- A parse tree for a CType expression.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.DictionaryLookupExpression.Qualifier">
-	<summary>
- The dictionary expression.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.DictionaryLookupExpression.BangLocation">
-	<summary>
- The location of the '!'.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.DictionaryLookupExpression.Name">
-	<summary>
- The name to look up.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.DictionaryLookupExpression.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new parse tree for a dictionary lookup expression.
- </summary>
-	<param name="qualifier">The dictionary expression.</param>
-	<param name="bangLocation">The location of the '!'.</param>
-	<param name="name">The name to look up..</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.DictionaryLookupExpression">
-	<summary>
- A parse tree for a dictionary lookup expression.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.NameImport.TypeName">
-	<summary>
- The imported name.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.NameImport.#ctor(Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new name import parse tree.
- </summary>
-	<param name="typeName">The name to import.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.NameImport">
-	<summary>
- A parse tree for an Imports statement for a name.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.EventDeclaration.ImplementsList">
 	<summary>
@@ -1584,6 +1474,58 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.SetAccessorDeclaration">
 	<summary>
  A parse tree for a Set property accessor.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.CTypeExpression.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new parse tree for a CType expression.
+ </summary>
+	<param name="leftParenthesisLocation">The location of the '('.</param>
+	<param name="operand">The expression to be converted.</param>
+	<param name="commaLocation">The location of the ','.</param>
+	<param name="target">The target type of the conversion.</param>
+	<param name="rightParenthesisLocation">The location of the ')'.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.CTypeExpression">
+	<summary>
+ A parse tree for a CType expression.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.DictionaryLookupExpression.Qualifier">
+	<summary>
+ The dictionary expression.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.DictionaryLookupExpression.BangLocation">
+	<summary>
+ The location of the '!'.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.DictionaryLookupExpression.Name">
+	<summary>
+ The name to look up.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.DictionaryLookupExpression.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new parse tree for a dictionary lookup expression.
+ </summary>
+	<param name="qualifier">The dictionary expression.</param>
+	<param name="bangLocation">The location of the '!'.</param>
+	<param name="name">The name to look up..</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.DictionaryLookupExpression">
+	<summary>
+ A parse tree for a dictionary lookup expression.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.NameImport.TypeName">
+	<summary>
+ The imported name.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.NameImport.#ctor(Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new name import parse tree.
+ </summary>
+	<param name="typeName">The name to import.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.NameImport">
+	<summary>
+ A parse tree for an Imports statement for a name.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ModifierCollection.ModifierTypes">
 	<summary>
@@ -1664,22 +1606,63 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for an Else statement.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Token.Type">
+</member><member name="P:Dlrsoft.VBScript.Parser.Argument.Name">
 	<summary>
- The type of the token.
+ The name of the argument, if any.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Token.Span">
+</member><member name="P:Dlrsoft.VBScript.Parser.Argument.ColonEqualsLocation">
 	<summary>
- The span of the token in the source text.
+ The location of the ':=', if any.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.Token.AsUnreservedKeyword">
+</member><member name="P:Dlrsoft.VBScript.Parser.Argument.Expression">
 	<summary>
- Returns the unreserved keyword type of an identifier.
+ The argument, if any.
  </summary>
-	<returns>The unreserved keyword type of an identifier, the token's type otherwise.</returns>
-</member><member name="T:Dlrsoft.VBScript.Parser.Token">
+</member><member name="M:Dlrsoft.VBScript.Parser.Argument.#ctor(Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span)">
 	<summary>
- The base class for all tokens. Contains line and column information as well as token type.
+ Constructs a new parse tree for an argument.
+ </summary>
+	<param name="name">The name of the argument, if any.</param>
+	<param name="colonEqualsLocation">The location of the ':=', if any.</param>
+	<param name="expression">The expression, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.Argument">
+	<summary>
+ A parse tree for an argument to a call or index.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.AttributeType">
+	<summary>
+ The target type of the attribute.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.AttributeTypeLocation">
+	<summary>
+ The location of the attribute type, if any.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.ColonLocation">
+	<summary>
+ The location of the ':', if any.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.Name">
+	<summary>
+ The name of the attribute being applied.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.Attribute.Arguments">
+	<summary>
+ The arguments to the attribute.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.Attribute.#ctor(Dlrsoft.VBScript.Parser.AttributeTypes,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Name,Dlrsoft.VBScript.Parser.ArgumentCollection,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new attribute parse tree.
+ </summary>
+	<param name="attributeType">The target type of the attribute.</param>
+	<param name="attributeTypeLocation">The location of the attribute type.</param>
+	<param name="colonLocation">The location of the ':'.</param>
+	<param name="name">The name of the attribute being applied.</param>
+	<param name="arguments">The arguments to the attribute.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.Attribute">
+	<summary>
+ A parse tree for an attribute usage.
  </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.AttributeBlockCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.AttributeCollection},Dlrsoft.VBScript.Parser.Span)">
 	<summary>
@@ -1691,6 +1674,14 @@ Dlrsoft.VBParser
 	<summary>
  A read-only collection of attributes.
  </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.GenericBlockDeclaration.TypeParameters">
+	<summary>
+ The type parameters of the type, if any.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.GenericBlockDeclaration">
+	<summary>
+ A parse tree for a possibly generic block declaration.
+ </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.Declaration.GetBadDeclaration(Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
 	<summary>
  Creates a bad declaration.
@@ -1701,30 +1692,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.Declaration">
 	<summary>
  A parse tree for a declaration.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralExpression.Literal">
-	<summary>
- The literal value.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralExpression.TypeCharacter">
-	<summary>
- The type character on the literal.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralExpression.IntegerBase">
-	<summary>
- The integer base of the literal.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.IntegerLiteralExpression.#ctor(System.Int32,Dlrsoft.VBScript.Parser.IntegerBase,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new parse tree for an integer literal.
- </summary>
-	<param name="literal">The literal value.</param>
-	<param name="integerBase">The integer base of the literal.</param>
-	<param name="typeCharacter">The type character on the literal.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.IntegerLiteralExpression">
-	<summary>
- A parse tree for an integer literal.
  </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.ExternalFunctionDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Charset,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.StringLiteralExpression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.StringLiteralExpression,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
 	<summary>
@@ -1770,6 +1737,30 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.SubDeclaration">
 	<summary>
  A parse tree for a Sub declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralExpression.Literal">
+	<summary>
+ The literal value.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralExpression.TypeCharacter">
+	<summary>
+ The type character on the literal.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralExpression.IntegerBase">
+	<summary>
+ The integer base of the literal.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.IntegerLiteralExpression.#ctor(System.Int32,Dlrsoft.VBScript.Parser.IntegerBase,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new parse tree for an integer literal.
+ </summary>
+	<param name="literal">The literal value.</param>
+	<param name="integerBase">The integer base of the literal.</param>
+	<param name="typeCharacter">The type character on the literal.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.IntegerLiteralExpression">
+	<summary>
+ A parse tree for an integer literal.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.AssignmentStatement.TargetExpression">
 	<summary>
@@ -1822,27 +1813,22 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a Catch block statement.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.GenericBlockDeclaration.TypeParameters">
+</member><member name="P:Dlrsoft.VBScript.Parser.Token.Type">
 	<summary>
- The type parameters of the type, if any.
+ The type of the token.
  </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.GenericBlockDeclaration">
+</member><member name="P:Dlrsoft.VBScript.Parser.Token.Span">
 	<summary>
- A parse tree for a possibly generic block declaration.
+ The span of the token in the source text.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CharacterLiteralToken.Literal">
+</member><member name="M:Dlrsoft.VBScript.Parser.Token.AsUnreservedKeyword">
 	<summary>
- The literal value.
+ Returns the unreserved keyword type of an identifier.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.CharacterLiteralToken.#ctor(System.Char,Dlrsoft.VBScript.Parser.Span)">
+	<returns>The unreserved keyword type of an identifier, the token's type otherwise.</returns>
+</member><member name="T:Dlrsoft.VBScript.Parser.Token">
 	<summary>
- Constructs a new character literal token.
- </summary>
-	<param name="literal">The literal value.</param>
-	<param name="span">The location of the literal.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.CharacterLiteralToken">
-	<summary>
- A character literal.
+ The base class for all tokens. Contains line and column information as well as token type.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.UnsignedIntegerLiteralToken.Literal">
 	<summary>
@@ -1868,13 +1854,78 @@ Dlrsoft.VBParser
 	<summary>
  An integer literal.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CommaDelimitedTreeCollection`1.CommaLocations">
+</member><member name="M:Dlrsoft.VBScript.Parser.GlobalExpression.#ctor(Dlrsoft.VBScript.Parser.Span)">
 	<summary>
- The location of the commas in the list.
+ Constructs a new parse tree for Global.
  </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.CommaDelimitedTreeCollection`1">
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.GlobalExpression">
 	<summary>
- A collection of trees that are delimited by commas.
+ A parse tree for Nothing.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ImplementsDeclaration.ImplementedTypes">
+	<summary>
+ The list of types.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ImplementsDeclaration.#ctor(Dlrsoft.VBScript.Parser.TypeNameCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for an Implements declaration.
+ </summary>
+	<param name="implementedTypes">The types inherited or implemented.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ImplementsDeclaration">
+	<summary>
+ A parse tree for an Implements declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.KeywordLocation">
+	<summary>
+ The location of the declaration's keyword.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.Name">
+	<summary>
+ The name of the declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.TypeParameters">
+	<summary>
+ The type parameters on the declaration, if any.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.Parameters">
+	<summary>
+ The parameters of the declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.AsLocation">
+	<summary>
+ The location of the 'As', if any.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.ResultTypeAttributes">
+	<summary>
+ The result type attributes, if any.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.ResultType">
+	<summary>
+ The result type, if any.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.SignatureDeclaration">
+	<summary>
+ A parse tree for a declaration with a signature.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.StructureDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a Structure declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="typeParameters">The type parameters on the declaration, if any.</param>
+	<param name="declarations">The declarations in the block.</param>
+	<param name="endStatement">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.StructureDeclaration">
+	<summary>
+ A parse tree for a Structure declaration.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.DateLiteralExpression.Literal">
 	<summary>
@@ -1909,15 +1960,6 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a floating point literal.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.GlobalExpression.#ctor(Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new parse tree for Global.
- </summary>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.GlobalExpression">
-	<summary>
- A parse tree for Nothing.
- </summary>
 </member><member name="T:Dlrsoft.VBScript.Parser.LiteralExpression">
 	<summary>
  A parse tree for a literal expression.
@@ -1944,38 +1986,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.OperatorType">
 	<summary>
  The type of a unary operator expression.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.KeywordLocation">
-	<summary>
- The location of the declaration's keyword.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.Name">
-	<summary>
- The name of the declaration.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.TypeParameters">
-	<summary>
- The type parameters on the declaration, if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.Parameters">
-	<summary>
- The parameters of the declaration.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.AsLocation">
-	<summary>
- The location of the 'As', if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.ResultTypeAttributes">
-	<summary>
- The result type attributes, if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SignatureDeclaration.ResultType">
-	<summary>
- The result type, if any.
- </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.SignatureDeclaration">
-	<summary>
- A parse tree for a declaration with a signature.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.FinallyBlockStatement.FinallyStatement">
 	<summary>
@@ -2023,38 +2033,6 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a constructed generic type name.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ImplementsDeclaration.ImplementedTypes">
-	<summary>
- The list of types.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ImplementsDeclaration.#ctor(Dlrsoft.VBScript.Parser.TypeNameCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a parse tree for an Implements declaration.
- </summary>
-	<param name="implementedTypes">The types inherited or implemented.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ImplementsDeclaration">
-	<summary>
- A parse tree for an Implements declaration.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.StructureDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a Structure declaration.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="typeParameters">The type parameters on the declaration, if any.</param>
-	<param name="declarations">The declarations in the block.</param>
-	<param name="endStatement">The end block declaration, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.StructureDeclaration">
-	<summary>
- A parse tree for a Structure declaration.
- </summary>
 </member><member name="F:Dlrsoft.VBScript.Parser.TypeCharacter.None">
 	<summary>No type character</summary>
 </member><member name="F:Dlrsoft.VBScript.Parser.TypeCharacter.StringSymbol">
@@ -2096,6 +2074,28 @@ Dlrsoft.VBParser
 	<summary>
  A character that denotes the type of something.
  </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.CharacterLiteralToken.Literal">
+	<summary>
+ The literal value.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.CharacterLiteralToken.#ctor(System.Char,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new character literal token.
+ </summary>
+	<param name="literal">The literal value.</param>
+	<param name="span">The location of the literal.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.CharacterLiteralToken">
+	<summary>
+ A character literal.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.CommaDelimitedTreeCollection`1.CommaLocations">
+	<summary>
+ The location of the commas in the list.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.CommaDelimitedTreeCollection`1">
+	<summary>
+ A collection of trees that are delimited by commas.
+ </summary>
 </member><member name="F:Dlrsoft.VBScript.Parser.IntegerBase.Decimal">
 	<summary>Base 10.</summary>
 </member><member name="F:Dlrsoft.VBScript.Parser.IntegerBase.Octal">
@@ -2105,6 +2105,131 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.IntegerBase">
 	<summary>
  The numeric base of an integer literal.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.GetAccessorDeclaration.GetLocation">
+	<summary>
+ The location of the 'Get'.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.GetAccessorDeclaration.Statements">
+	<summary>
+ The statements in the accessor.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.GetAccessorDeclaration.EndDeclaration">
+	<summary>
+ The End declaration for the accessor.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.GetAccessorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a Get property accessor.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="getLocation">The location of the 'Get'.</param>
+	<param name="statements">The statements in the declaration.</param>
+	<param name="endDeclaration">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.GetAccessorDeclaration">
+	<summary>
+ A parse tree for a Get property accessor.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.NamespaceDeclaration.NamespaceLocation">
+	<summary>
+ The location of 'Namespace'.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.NamespaceDeclaration.Name">
+	<summary>
+ The name of the namespace.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.NamespaceDeclaration.Declarations">
+	<summary>
+ The declarations in the namespace.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.NamespaceDeclaration.EndDeclaration">
+	<summary>
+ The End Namespace declaration, if any.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.NamespaceDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Name,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for a namespace declaration.
+ </summary>
+	<param name="attributes">The attributes on the declaration.</param>
+	<param name="modifiers">The modifiers on the declaration.</param>
+	<param name="namespaceLocation">The location of 'Namespace'.</param>
+	<param name="name">The name of the namespace.</param>
+	<param name="declarations">The declarations in the namespace.</param>
+	<param name="endDeclaration">The End Namespace statement, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.NamespaceDeclaration">
+	<summary>
+ A parse tree for a namespace declaration.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.OptionType">
+	<summary>
+ The type of an Option declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.QualifiedExpression.Qualifier">
+	<summary>
+ The expression qualifying the name.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.QualifiedExpression.DotLocation">
+	<summary>
+ The location of the '.'.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.QualifiedExpression.Name">
+	<summary>
+ The qualified name.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.QualifiedExpression.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new parse tree for a qualified name expression.
+ </summary>
+	<param name="qualifier">The expression qualifying the name.</param>
+	<param name="dotLocation">The location of the '.'.</param>
+	<param name="name">The qualified name.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.QualifiedExpression">
+	<summary>
+ A parse tree for a qualified name expression.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.AggregateInitializer.Elements">
+	<summary>
+ The elements of the aggregate initializer.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.AggregateInitializer.#ctor(Dlrsoft.VBScript.Parser.InitializerCollection,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new aggregate initializer parse tree.
+ </summary>
+	<param name="elements">The elements of the aggregate initializer.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.AggregateInitializer">
+	<summary>
+ A parse tree for an aggregate initializer.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ReturnStatement.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a Return statement.
+ </summary>
+	<param name="expression">The expression.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ReturnStatement">
+	<summary>
+ A parse tree for an expression statement.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.SyncLockBlockStatement.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockStatement,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a SyncLock statement block.
+ </summary>
+	<param name="expression">The expression.</param>
+	<param name="statements">The statements in the block.</param>
+	<param name="endStatement">The End statement for the block, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.SyncLockBlockStatement">
+	<summary>
+ A parse tree for a SyncLock block statement.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ErrorToken.SyntaxError">
 	<summary>
@@ -2151,131 +2276,6 @@ Dlrsoft.VBParser
 	<summary>
  A collection of case clauses.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.QualifiedExpression.Qualifier">
-	<summary>
- The expression qualifying the name.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.QualifiedExpression.DotLocation">
-	<summary>
- The location of the '.'.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.QualifiedExpression.Name">
-	<summary>
- The qualified name.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.QualifiedExpression.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new parse tree for a qualified name expression.
- </summary>
-	<param name="qualifier">The expression qualifying the name.</param>
-	<param name="dotLocation">The location of the '.'.</param>
-	<param name="name">The qualified name.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.QualifiedExpression">
-	<summary>
- A parse tree for a qualified name expression.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.NamespaceDeclaration.NamespaceLocation">
-	<summary>
- The location of 'Namespace'.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.NamespaceDeclaration.Name">
-	<summary>
- The name of the namespace.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.NamespaceDeclaration.Declarations">
-	<summary>
- The declarations in the namespace.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.NamespaceDeclaration.EndDeclaration">
-	<summary>
- The End Namespace declaration, if any.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.NamespaceDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Name,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a parse tree for a namespace declaration.
- </summary>
-	<param name="attributes">The attributes on the declaration.</param>
-	<param name="modifiers">The modifiers on the declaration.</param>
-	<param name="namespaceLocation">The location of 'Namespace'.</param>
-	<param name="name">The name of the namespace.</param>
-	<param name="declarations">The declarations in the namespace.</param>
-	<param name="endDeclaration">The End Namespace statement, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.NamespaceDeclaration">
-	<summary>
- A parse tree for a namespace declaration.
- </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.OptionType">
-	<summary>
- The type of an Option declaration.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.AggregateInitializer.Elements">
-	<summary>
- The elements of the aggregate initializer.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.AggregateInitializer.#ctor(Dlrsoft.VBScript.Parser.InitializerCollection,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new aggregate initializer parse tree.
- </summary>
-	<param name="elements">The elements of the aggregate initializer.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.AggregateInitializer">
-	<summary>
- A parse tree for an aggregate initializer.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.GetAccessorDeclaration.GetLocation">
-	<summary>
- The location of the 'Get'.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.GetAccessorDeclaration.Statements">
-	<summary>
- The statements in the accessor.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.GetAccessorDeclaration.EndDeclaration">
-	<summary>
- The End declaration for the accessor.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.GetAccessorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a Get property accessor.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="getLocation">The location of the 'Get'.</param>
-	<param name="statements">The statements in the declaration.</param>
-	<param name="endDeclaration">The end block declaration, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.GetAccessorDeclaration">
-	<summary>
- A parse tree for a Get property accessor.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ReturnStatement.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a Return statement.
- </summary>
-	<param name="expression">The expression.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ReturnStatement">
-	<summary>
- A parse tree for an expression statement.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.SyncLockBlockStatement.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockStatement,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a SyncLock statement block.
- </summary>
-	<param name="expression">The expression.</param>
-	<param name="statements">The statements in the block.</param>
-	<param name="endStatement">The End statement for the block, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.SyncLockBlockStatement">
-	<summary>
- A parse tree for a SyncLock block statement.
- </summary>
 </member><member name="T:Dlrsoft.VBScript.Parser.TreeType">
 	<summary>
  The type of a tree.
@@ -2303,43 +2303,6 @@ Dlrsoft.VBParser
 	<summary>
  An external checksum for a file.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SyntaxError.Type">
-	<summary>
- The type of the syntax error.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SyntaxError.Span">
-	<summary>
- The location of the syntax error.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.SyntaxError.#ctor(Dlrsoft.VBScript.Parser.SyntaxErrorType,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new syntax error.
- </summary>
-	<param name="type">The type of the syntax error.</param>
-	<param name="span">The location of the syntax error.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.SyntaxError">
-	<summary>
- A syntax error.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.FloatingPointLiteralToken.Literal">
-	<summary>
- The value of the literal.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.FloatingPointLiteralToken.TypeCharacter">
-	<summary>
- The type character after the literal.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.FloatingPointLiteralToken.#ctor(System.Double,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new floating point literal token.
- </summary>
-	<param name="literal">The literal value.</param>
-	<param name="typeCharacter">The type character of the literal.</param>
-	<param name="span">The location of the literal.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.FloatingPointLiteralToken">
-	<summary>
- A floating point literal.
- </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.AttributeDeclaration.Attributes">
 	<summary>
  The attributes.
@@ -2354,21 +2317,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.AttributeDeclaration">
 	<summary>
  A parse tree for an assembly-level or module-level attribute declaration.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.UnaryOperatorExpression.Operator">
-	<summary>
- The operator.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.UnaryOperatorExpression.#ctor(Dlrsoft.VBScript.Parser.OperatorType,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new unary operator expression parse tree.
- </summary>
-	<param name="operator">The type of the unary operator.</param>
-	<param name="operand">The operand of the operator.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.UnaryOperatorExpression">
-	<summary>
- A parse tree for an unary operator expression.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.RemoveHandlerAccessorDeclaration.RemoveHandlerLocation">
 	<summary>
@@ -2401,6 +2349,26 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a RemoveHandler property accessor.
  </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.DelegateFunctionDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a delegate declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="functionLocation">The location of the 'Function'.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="typeParameters">The type parameters of the declaration, if any.</param>
+	<param name="parameters">The parameters of the declaration.</param>
+	<param name="asLocation">The location of the 'As', if any.</param>
+	<param name="resultTypeAttributes">The attributes on the result type, if any.</param>
+	<param name="resultType">The result type, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.DelegateFunctionDeclaration">
+	<summary>
+ A parse tree for a delegate Function declaration.
+ </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.VariableListDeclaration.VariableDeclarators">
 	<summary>
  The variables being declared.
@@ -2417,6 +2385,21 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.VariableListDeclaration">
 	<summary>
  A parse tree for variable declarations.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.UnaryOperatorExpression.Operator">
+	<summary>
+ The operator.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.UnaryOperatorExpression.#ctor(Dlrsoft.VBScript.Parser.OperatorType,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new unary operator expression parse tree.
+ </summary>
+	<param name="operator">The type of the unary operator.</param>
+	<param name="operand">The operand of the operator.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.UnaryOperatorExpression">
+	<summary>
+ A parse tree for an unary operator expression.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.SimpleName.Name">
 	<summary>
@@ -2525,25 +2508,106 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a With block statement.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.DelegateFunctionDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+</member><member name="P:Dlrsoft.VBScript.Parser.SyntaxError.Type">
 	<summary>
- Constructs a new parse tree for a delegate declaration.
+ The type of the syntax error.
  </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="functionLocation">The location of the 'Function'.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="typeParameters">The type parameters of the declaration, if any.</param>
-	<param name="parameters">The parameters of the declaration.</param>
-	<param name="asLocation">The location of the 'As', if any.</param>
-	<param name="resultTypeAttributes">The attributes on the result type, if any.</param>
-	<param name="resultType">The result type, if any.</param>
+</member><member name="P:Dlrsoft.VBScript.Parser.SyntaxError.Span">
+	<summary>
+ The location of the syntax error.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.SyntaxError.#ctor(Dlrsoft.VBScript.Parser.SyntaxErrorType,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new syntax error.
+ </summary>
+	<param name="type">The type of the syntax error.</param>
+	<param name="span">The location of the syntax error.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.SyntaxError">
+	<summary>
+ A syntax error.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.FloatingPointLiteralToken.Literal">
+	<summary>
+ The value of the literal.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.FloatingPointLiteralToken.TypeCharacter">
+	<summary>
+ The type character after the literal.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.FloatingPointLiteralToken.#ctor(System.Double,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new floating point literal token.
+ </summary>
+	<param name="literal">The literal value.</param>
+	<param name="typeCharacter">The type character of the literal.</param>
+	<param name="span">The location of the literal.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.FloatingPointLiteralToken">
+	<summary>
+ A floating point literal.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ScriptBlock.Statements">
+	<summary>
+ The declarations in the file.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ScriptBlock.#ctor(Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new file parse tree.
+ </summary>
+	<param name="statements">The statements in the file.</param>
+	<param name="span">The location of the tree.</param>
+</member><member name="P:Dlrsoft.VBScript.Parser.ContinueStatement.ContinueType">
+	<summary>
+ The type of tree this statement continues.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ContinueStatement.ContinueArgumentLocation">
+	<summary>
+ The location of the Continue statement type.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ContinueStatement.#ctor(Dlrsoft.VBScript.Parser.BlockType,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for an Continue statement.
+ </summary>
+	<param name="continueType">The type of tree this statement continues.</param>
+	<param name="continueArgumentLocation">The location of the Continue statement type.</param>
 	<param name="span">The location of the parse tree.</param>
 	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.DelegateFunctionDeclaration">
+</member><member name="T:Dlrsoft.VBScript.Parser.ContinueStatement">
 	<summary>
- A parse tree for a delegate Function declaration.
+ A parse tree for an Continue statement.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.UsingBlockStatement.VariableDeclarators">
+	<summary>
+ The variable declarators, if no expression.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.UsingBlockStatement.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockStatement,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a Using statement block with an expression.
+ </summary>
+	<param name="expression">The expression.</param>
+	<param name="statements">The statements in the block.</param>
+	<param name="endStatement">The End statement for the block, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="M:Dlrsoft.VBScript.Parser.UsingBlockStatement.#ctor(Dlrsoft.VBScript.Parser.VariableDeclaratorCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockStatement,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a Using statement block with variable declarators.
+ </summary>
+	<param name="variableDeclarators">The variable declarators.</param>
+	<param name="statements">The statements in the block.</param>
+	<param name="endStatement">The End statement for the block, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.UsingBlockStatement">
+	<summary>
+ A parse tree for a Using block statement.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.DelegateDeclaration.SubOrFunctionLocation">
+	<summary>
+ The location of 'Sub' or 'Function'.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.DelegateDeclaration">
+	<summary>
+ A parse tree for a delegate declaration.
  </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.DirectCastExpression.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
 	<summary>
@@ -2593,16 +2657,6 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for an expression that refers to a type.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ScriptBlock.Statements">
-	<summary>
- The declarations in the file.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ScriptBlock.#ctor(Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new file parse tree.
- </summary>
-	<param name="statements">The statements in the file.</param>
-	<param name="span">The location of the tree.</param>
 </member><member name="P:Dlrsoft.VBScript.Parser.AliasImport.Name">
 	<summary>
  The alias name.
@@ -2626,26 +2680,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.AliasImport">
 	<summary>
  A parse tree for an Imports statement that aliases a type or namespace.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ContinueStatement.ContinueType">
-	<summary>
- The type of tree this statement continues.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ContinueStatement.ContinueArgumentLocation">
-	<summary>
- The location of the Continue statement type.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ContinueStatement.#ctor(Dlrsoft.VBScript.Parser.BlockType,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a parse tree for an Continue statement.
- </summary>
-	<param name="continueType">The type of tree this statement continues.</param>
-	<param name="continueArgumentLocation">The location of the Continue statement type.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ContinueStatement">
-	<summary>
- A parse tree for an Continue statement.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ForBlockStatement.ControlExpression">
 	<summary>
@@ -2788,32 +2822,6 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a Stop statement.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.UsingBlockStatement.VariableDeclarators">
-	<summary>
- The variable declarators, if no expression.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.UsingBlockStatement.#ctor(Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockStatement,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a Using statement block with an expression.
- </summary>
-	<param name="expression">The expression.</param>
-	<param name="statements">The statements in the block.</param>
-	<param name="endStatement">The End statement for the block, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="M:Dlrsoft.VBScript.Parser.UsingBlockStatement.#ctor(Dlrsoft.VBScript.Parser.VariableDeclaratorCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockStatement,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a Using statement block with variable declarators.
- </summary>
-	<param name="variableDeclarators">The variable declarators.</param>
-	<param name="statements">The statements in the block.</param>
-	<param name="endStatement">The End statement for the block, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.UsingBlockStatement">
-	<summary>
- A parse tree for a Using block statement.
- </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.IntrinsicTypeName.IntrinsicType">
 	<summary>
  The intrinsic type.
@@ -2828,69 +2836,6 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for an intrinsic type name.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.DelegateDeclaration.SubOrFunctionLocation">
-	<summary>
- The location of 'Sub' or 'Function'.
- </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.DelegateDeclaration">
-	<summary>
- A parse tree for a delegate declaration.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Span.Start">
-	<summary>
- The start location of the span.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Span.Finish">
-	<summary>
- The end location of the span.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Span.IsValid">
-	<summary>
- Whether the locations in the span are valid.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.Span.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location)">
-	<summary>
- Constructs a new span with a specific start and end location.
- </summary>
-	<param name="start">The beginning of the span.</param>
-	<param name="finish">The end of the span.</param>
-</member><member name="M:Dlrsoft.VBScript.Parser.Span.op_Equality(Dlrsoft.VBScript.Parser.Span,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Compares two specified Span values to see if they are equal.
- </summary>
-	<param name="left">One span to compare.</param>
-	<param name="right">The other span to compare.</param>
-	<returns>True if the spans are the same, False otherwise.</returns>
-</member><member name="M:Dlrsoft.VBScript.Parser.Span.op_Inequality(Dlrsoft.VBScript.Parser.Span,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Compares two specified Span values to see if they are not equal.
- </summary>
-	<param name="left">One span to compare.</param>
-	<param name="right">The other span to compare.</param>
-	<returns>True if the spans are not the same, False otherwise.</returns>
-</member><member name="T:Dlrsoft.VBScript.Parser.Span">
-	<summary>
- Stores the location of a span of text.
- </summary>
-	<remarks>The end location is exclusive.</remarks>
-</member><member name="T:Dlrsoft.VBScript.Parser.SyntaxErrorType">
-	<summary>
- The type of a syntax error.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.CharacterLiteralExpression.Literal">
-	<summary>
- The literal value.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.CharacterLiteralExpression.#ctor(System.Char,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new parse tree for a character literal expression.
- </summary>
-	<param name="literal">The literal value.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.CharacterLiteralExpression">
-	<summary>
- A parse tree for a character literal expression.
- </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.TryCastExpression.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
 	<summary>
  Constructs a new parse tree for a TryCast expression.
@@ -2904,20 +2849,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.TryCastExpression">
 	<summary>
  A parse tree for a CType expression.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.File.Declarations">
-	<summary>
- The declarations in the file.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.File.#ctor(Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new file parse tree.
- </summary>
-	<param name="declarations">The declarations in the file.</param>
-	<param name="span">The location of the tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.File">
-	<summary>
- A parse tree for an entire file.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.OptionDeclaration.OptionType">
 	<summary>
@@ -2943,6 +2874,34 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.OptionDeclaration">
 	<summary>
  A parse tree for an Option declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.CharacterLiteralExpression.Literal">
+	<summary>
+ The literal value.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.CharacterLiteralExpression.#ctor(System.Char,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new parse tree for a character literal expression.
+ </summary>
+	<param name="literal">The literal value.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.CharacterLiteralExpression">
+	<summary>
+ A parse tree for a character literal expression.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.File.Declarations">
+	<summary>
+ The declarations in the file.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.File.#ctor(Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new file parse tree.
+ </summary>
+	<param name="declarations">The declarations in the file.</param>
+	<param name="span">The location of the tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.File">
+	<summary>
+ A parse tree for an entire file.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ExpressionInitializer.Expression">
 	<summary>
@@ -3042,28 +3001,46 @@ Dlrsoft.VBParser
 	<summary>
  A read-only collection of type names.
  </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.CaseClause">
+</member><member name="P:Dlrsoft.VBScript.Parser.Span.Start">
 	<summary>
- A parse tree for a case clause in a Select statement.
+ The start location of the span.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Comment.Comment">
+</member><member name="P:Dlrsoft.VBScript.Parser.Span.Finish">
 	<summary>
- The text of the comment.
+ The end location of the span.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Comment.IsREM">
+</member><member name="P:Dlrsoft.VBScript.Parser.Span.IsValid">
 	<summary>
- Whether the comment is a REM comment.
+ Whether the locations in the span are valid.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.Comment.#ctor(System.String,System.Boolean,Dlrsoft.VBScript.Parser.Span)">
+</member><member name="M:Dlrsoft.VBScript.Parser.Span.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location)">
 	<summary>
- Constructs a new comment parse tree.
+ Constructs a new span with a specific start and end location.
  </summary>
-	<param name="comment">The text of the comment.</param>
-	<param name="isREM">Whether the comment is a REM comment.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.Comment">
+	<param name="start">The beginning of the span.</param>
+	<param name="finish">The end of the span.</param>
+</member><member name="M:Dlrsoft.VBScript.Parser.Span.op_Equality(Dlrsoft.VBScript.Parser.Span,Dlrsoft.VBScript.Parser.Span)">
 	<summary>
- A parse tree for a comment.
+ Compares two specified Span values to see if they are equal.
+ </summary>
+	<param name="left">One span to compare.</param>
+	<param name="right">The other span to compare.</param>
+	<returns>True if the spans are the same, False otherwise.</returns>
+</member><member name="M:Dlrsoft.VBScript.Parser.Span.op_Inequality(Dlrsoft.VBScript.Parser.Span,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Compares two specified Span values to see if they are not equal.
+ </summary>
+	<param name="left">One span to compare.</param>
+	<param name="right">The other span to compare.</param>
+	<returns>True if the spans are not the same, False otherwise.</returns>
+</member><member name="T:Dlrsoft.VBScript.Parser.Span">
+	<summary>
+ Stores the location of a span of text.
+ </summary>
+	<remarks>The end location is exclusive.</remarks>
+</member><member name="T:Dlrsoft.VBScript.Parser.SyntaxErrorType">
+	<summary>
+ The type of a syntax error.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.BlockDeclaration.KeywordLocation">
 	<summary>
@@ -3084,6 +3061,70 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.BlockDeclaration">
 	<summary>
  A parse tree for a block declaration.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.SpecialNameTypes">
+	<summary>
+ The types of special names that exist.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ClassDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a Class declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="typeParameters">The type parameters of the type, if any.</param>
+	<param name="declarations">The declarations in the block.</param>
+	<param name="endStatement">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ClassDeclaration">
+	<summary>
+ A parse tree for a Class declaration.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ConstructorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Creates a new parse tree for a constructor declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="parameters">The parameters of the declaration.</param>
+	<param name="statements">The statements in the declaration.</param>
+	<param name="endDeclaration">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ConstructorDeclaration">
+	<summary>
+ A parse tree for a constructor declaration.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.EnumDeclaration.AsLocation">
+	<summary>
+ The location of the 'As', if any.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.EnumDeclaration.ElementType">
+	<summary>
+ The element type of the enumerated type, if any.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.EnumDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for an Enum declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="asLocation">The location of the 'As', if any.</param>
+	<param name="elementType">The element type of the enumerated type, if any.</param>
+	<param name="declarations">The enumerated values.</param>
+	<param name="endStatement">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.EnumDeclaration">
+	<summary>
+ A parse tree for an Enum declaration.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.IntrinsicCastExpression.IntrinsicType">
 	<summary>
@@ -3124,23 +3165,6 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a string literal expression.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ConstructorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Creates a new parse tree for a constructor declaration.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="parameters">The parameters of the declaration.</param>
-	<param name="statements">The statements in the declaration.</param>
-	<param name="endDeclaration">The end block declaration, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ConstructorDeclaration">
-	<summary>
- A parse tree for a constructor declaration.
- </summary>
 </member><member name="T:Dlrsoft.VBScript.Parser.Name">
 	<summary>
  A parse tree for a name.
@@ -3168,10 +3192,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.QualifiedName">
 	<summary>
  A parse tree for a qualified name (e.g. 'foo.bar').
- </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.SpecialNameTypes">
-	<summary>
- The types of special names that exist.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.Parameter.Attributes">
 	<summary>
@@ -3217,48 +3237,28 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a parameter.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ClassDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+</member><member name="T:Dlrsoft.VBScript.Parser.CaseClause">
 	<summary>
- Constructs a new parse tree for a Class declaration.
+ A parse tree for a case clause in a Select statement.
  </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="typeParameters">The type parameters of the type, if any.</param>
-	<param name="declarations">The declarations in the block.</param>
-	<param name="endStatement">The end block declaration, if any.</param>
+</member><member name="P:Dlrsoft.VBScript.Parser.Comment.Comment">
+	<summary>
+ The text of the comment.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.Comment.IsREM">
+	<summary>
+ Whether the comment is a REM comment.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.Comment.#ctor(System.String,System.Boolean,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new comment parse tree.
+ </summary>
+	<param name="comment">The text of the comment.</param>
+	<param name="isREM">Whether the comment is a REM comment.</param>
 	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ClassDeclaration">
+</member><member name="T:Dlrsoft.VBScript.Parser.Comment">
 	<summary>
- A parse tree for a Class declaration.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.EnumDeclaration.AsLocation">
-	<summary>
- The location of the 'As', if any.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.EnumDeclaration.ElementType">
-	<summary>
- The element type of the enumerated type, if any.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.EnumDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.DeclarationCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a parse tree for an Enum declaration.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="asLocation">The location of the 'As', if any.</param>
-	<param name="elementType">The element type of the enumerated type, if any.</param>
-	<param name="declarations">The enumerated values.</param>
-	<param name="endStatement">The end block declaration, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.EnumDeclaration">
-	<summary>
- A parse tree for an Enum declaration.
+ A parse tree for a comment.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ExternalLineMapping.Start">
 	<summary>
@@ -3287,62 +3287,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.ExternalLineMapping">
 	<summary>
  A line mapping from a source span to an external file and line.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SourceRegion.Start">
-	<summary>
- The start location of the region.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SourceRegion.Finish">
-	<summary>
- The end location of the region.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.SourceRegion.Description">
-	<summary>
- The description of the region.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.SourceRegion.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,System.String)">
-	<summary>
- Constructs a new source region.
- </summary>
-	<param name="start">The start location of the region.</param>
-	<param name="finish">The end location of the region.</param>
-	<param name="description">The description of the region.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.SourceRegion">
-	<summary>
- A region marked in the source code.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.LineTerminatorToken.#ctor(Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Create a new line terminator token.
- </summary>
-	<param name="span">The location of the line terminator.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.LineTerminatorToken">
-	<summary>
- A line terminator.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.AttributeCollection.RightBracketLocation">
-	<summary>
- The location of the '}'.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.AttributeCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Attribute},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new collection of attributes.
- </summary>
-	<param name="attributes">The attributes in the collection.</param>
-	<param name="commaLocations">The location of the commas in the list.</param>
-	<param name="rightBracketLocation">The location of the right bracket.</param>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.AttributeCollection">
-	<summary>
- A read-only collection of attributes.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ColonDelimitedTreeCollection`1.ColonLocations">
-	<summary>
- The locations of the colons in the collection.
- </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.ColonDelimitedTreeCollection`1">
-	<summary>
- A collection of trees that are colon delimited.
  </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.DeclarationCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Declaration},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Span)">
 	<summary>
@@ -3489,41 +3433,102 @@ Dlrsoft.VBParser
 	<summary>
  A collection of type constraints.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.IdentifierToken.IsKeyword(Dlrsoft.VBScript.Parser.TokenType)">
+</member><member name="P:Dlrsoft.VBScript.Parser.SourceRegion.Start">
 	<summary>
- Determines if a token type is a keyword.
+ The start location of the region.
  </summary>
-	<param name="type">The token type to check.</param>
-	<returns>True if the token type is a keyword, False otherwise.</returns>
-</member><member name="P:Dlrsoft.VBScript.Parser.IdentifierToken.Identifier">
+</member><member name="P:Dlrsoft.VBScript.Parser.SourceRegion.Finish">
 	<summary>
- The identifier name.
+ The end location of the region.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.IdentifierToken.Escaped">
+</member><member name="P:Dlrsoft.VBScript.Parser.SourceRegion.Description">
 	<summary>
- Whether the identifier is escaped.
+ The description of the region.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.IdentifierToken.TypeCharacter">
+</member><member name="M:Dlrsoft.VBScript.Parser.SourceRegion.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,System.String)">
 	<summary>
- The type character of the identifier.
+ Constructs a new source region.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.IdentifierToken.#ctor(Dlrsoft.VBScript.Parser.TokenType,Dlrsoft.VBScript.Parser.TokenType,System.String,System.Boolean,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
+	<param name="start">The start location of the region.</param>
+	<param name="finish">The end location of the region.</param>
+	<param name="description">The description of the region.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.SourceRegion">
 	<summary>
- Constructs a new identifier token.
+ A region marked in the source code.
  </summary>
-	<param name="type">The token type of the identifier.</param>
-	<param name="unreservedType">The unreserved token type of the identifier.</param>
-	<param name="identifier">The text of the identifier</param>
-	<param name="escaped">Whether the identifier is escaped.</param>
-	<param name="typeCharacter">The type character of the identifier.</param>
-	<param name="span">The location of the identifier.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.IdentifierToken">
+</member><member name="M:Dlrsoft.VBScript.Parser.LineTerminatorToken.#ctor(Dlrsoft.VBScript.Parser.Span)">
 	<summary>
- An identifier.
+ Create a new line terminator token.
  </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.Initializer">
+	<param name="span">The location of the line terminator.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.LineTerminatorToken">
 	<summary>
- A parse tree for an initializer.
+ A line terminator.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.AttributeCollection.RightBracketLocation">
+	<summary>
+ The location of the '}'.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.AttributeCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Attribute},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new collection of attributes.
+ </summary>
+	<param name="attributes">The attributes in the collection.</param>
+	<param name="commaLocations">The location of the commas in the list.</param>
+	<param name="rightBracketLocation">The location of the right bracket.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.AttributeCollection">
+	<summary>
+ A read-only collection of attributes.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ColonDelimitedTreeCollection`1.ColonLocations">
+	<summary>
+ The locations of the colons in the collection.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.ColonDelimitedTreeCollection`1">
+	<summary>
+ A collection of trees that are colon delimited.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.OperatorDeclaration.OperatorToken">
+	<summary>
+ The operator being overloaded.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.OperatorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Token,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Creates a new parse tree for an overloaded operator declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="operatorToken">The operator being overloaded.</param>
+	<param name="parameters">The parameters of the declaration.</param>
+	<param name="asLocation">The location of the 'As', if any.</param>
+	<param name="resultTypeAttributes">The attributes on the result type, if any.</param>
+	<param name="resultType">The result type, if any.</param>
+	<param name="statements">The statements in the declaration.</param>
+	<param name="endDeclaration">The end block declaration, if any.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.OperatorDeclaration">
+	<summary>
+ A parse tree for an overloaded operator declaration.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.DelegateSubDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a delegate Sub declaration.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="subLocation">The location of the 'Sub'.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="typeParameters">The type parameters of the declaration, if any.</param>
+	<param name="parameters">The parameters of the declaration.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.DelegateSubDeclaration">
+	<summary>
+ A parse tree for a delegate Sub declaration.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ExternalDeclaration.CharsetLocation">
 	<summary>
@@ -3577,38 +3582,9 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for a Sub, Function or constructor declaration.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.OperatorDeclaration.OperatorToken">
+</member><member name="T:Dlrsoft.VBScript.Parser.Initializer">
 	<summary>
- The operator being overloaded.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.OperatorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Token,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.TypeName,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Creates a new parse tree for an overloaded operator declaration.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="operatorToken">The operator being overloaded.</param>
-	<param name="parameters">The parameters of the declaration.</param>
-	<param name="asLocation">The location of the 'As', if any.</param>
-	<param name="resultTypeAttributes">The attributes on the result type, if any.</param>
-	<param name="resultType">The result type, if any.</param>
-	<param name="statements">The statements in the declaration.</param>
-	<param name="endDeclaration">The end block declaration, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.OperatorDeclaration">
-	<summary>
- A parse tree for an overloaded operator declaration.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.GlobalNamespaceName.#ctor(Dlrsoft.VBScript.Parser.Span)">
-	<summary>
- Constructs a new global namespace name parse tree.
- </summary>
-	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.GlobalNamespaceName">
-	<summary>
- A parse tree for the global namespace (i.e. 'Global').
+ A parse tree for an initializer.
  </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.VariableNameCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.VariableName},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Span)">
 	<summary>
@@ -3641,33 +3617,6 @@ Dlrsoft.VBParser
 	<summary>
  A parse tree for an Exit statement.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Tree.Type">
-	<summary>
- The type of the tree.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Tree.Span">
-	<summary>
- The location of the tree.
- </summary>
-	<remarks>
- The span ends at the first character beyond the tree
- </remarks>
-</member><member name="P:Dlrsoft.VBScript.Parser.Tree.Parent">
-	<summary>
- The parent of the tree. Nothing if the root tree.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Tree.Children">
-	<summary>
- The children of the tree.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.Tree.IsBad">
-	<summary>
- Whether the tree is 'bad'.
- </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.Tree">
-	<summary>
- The root class of all trees.
- </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.ArrayTypeName.ElementTypeName">
 	<summary>
  The type name for the element type of the array.
@@ -3695,23 +3644,6 @@ Dlrsoft.VBParser
 	<remarks>
  This tree may contain size arguments as well.
  </remarks>
-</member><member name="M:Dlrsoft.VBScript.Parser.DelegateSubDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.TypeParameterCollection,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a delegate Sub declaration.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="subLocation">The location of the 'Sub'.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="typeParameters">The type parameters of the declaration, if any.</param>
-	<param name="parameters">The parameters of the declaration.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.DelegateSubDeclaration">
-	<summary>
- A parse tree for a delegate Sub declaration.
- </summary>
 </member><member name="M:Dlrsoft.VBScript.Parser.VariableDeclaratorCollection.#ctor(System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.VariableDeclarator},System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Location},Dlrsoft.VBScript.Parser.Span)">
 	<summary>
  Constructs a new collection of variable declarators.
@@ -3723,72 +3655,121 @@ Dlrsoft.VBParser
 	<summary>
  A read-only collection of variable declarators.
  </summary>
-</member><member name="F:Dlrsoft.VBScript.Parser.LanguageVersion.VisualBasic71">
-	<summary>Visual Basic 7.1</summary>
-	<remarks>Shipped in Visual Basic 2003</remarks>
-</member><member name="F:Dlrsoft.VBScript.Parser.LanguageVersion.VisualBasic80">
-	<summary>Visual Basic 8.0</summary>
-	<remarks>Shipped in Visual Basic 2005</remarks>
-</member><member name="T:Dlrsoft.VBScript.Parser.LanguageVersion">
+</member><member name="M:Dlrsoft.VBScript.Parser.IdentifierToken.IsKeyword(Dlrsoft.VBScript.Parser.TokenType)">
 	<summary>
- The version of the language you want.
+ Determines if a token type is a keyword.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralToken.Literal">
+	<param name="type">The token type to check.</param>
+	<returns>True if the token type is a keyword, False otherwise.</returns>
+</member><member name="P:Dlrsoft.VBScript.Parser.IdentifierToken.Identifier">
 	<summary>
- The value of the literal.
+ The identifier name.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralToken.TypeCharacter">
+</member><member name="P:Dlrsoft.VBScript.Parser.IdentifierToken.Escaped">
 	<summary>
- The type character of the literal.
+ Whether the identifier is escaped.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralToken.IntegerBase">
+</member><member name="P:Dlrsoft.VBScript.Parser.IdentifierToken.TypeCharacter">
 	<summary>
- The integer base of the literal.
+ The type character of the identifier.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.IntegerLiteralToken.#ctor(System.Int32,Dlrsoft.VBScript.Parser.IntegerBase,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
+</member><member name="M:Dlrsoft.VBScript.Parser.IdentifierToken.#ctor(Dlrsoft.VBScript.Parser.TokenType,Dlrsoft.VBScript.Parser.TokenType,System.String,System.Boolean,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
 	<summary>
- Constructs a new integer literal.
+ Constructs a new identifier token.
  </summary>
-	<param name="literal">The literal value.</param>
-	<param name="integerBase">The integer base of the literal.</param>
-	<param name="typeCharacter">The type character of the literal.</param>
-	<param name="span">The location of the literal.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.IntegerLiteralToken">
+	<param name="type">The token type of the identifier.</param>
+	<param name="unreservedType">The unreserved token type of the identifier.</param>
+	<param name="identifier">The text of the identifier</param>
+	<param name="escaped">Whether the identifier is escaped.</param>
+	<param name="typeCharacter">The type character of the identifier.</param>
+	<param name="span">The location of the identifier.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.IdentifierToken">
 	<summary>
- An integer literal.
+ An identifier.
  </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.TokenType">
+</member><member name="P:Dlrsoft.VBScript.Parser.Tree.Type">
 	<summary>
- The type of a token.
+ The type of the tree.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ComparisonCaseClause.IsLocation">
+</member><member name="P:Dlrsoft.VBScript.Parser.Tree.Span">
 	<summary>
- The location of the 'Is', if any.
+ The location of the tree.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ComparisonCaseClause.ComparisonOperator">
+	<remarks>
+ The span ends at the first character beyond the tree
+ </remarks>
+</member><member name="P:Dlrsoft.VBScript.Parser.Tree.Parent">
 	<summary>
- The comparison operator used in the case clause.
+ The parent of the tree. Nothing if the root tree.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ComparisonCaseClause.OperatorLocation">
+</member><member name="P:Dlrsoft.VBScript.Parser.Tree.Children">
 	<summary>
- The location of the comparison operator.
+ The children of the tree.
  </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.ComparisonCaseClause.Operand">
+</member><member name="P:Dlrsoft.VBScript.Parser.Tree.IsBad">
 	<summary>
- The operand of the case clause.
+ Whether the tree is 'bad'.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ComparisonCaseClause.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.OperatorType,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span)">
+</member><member name="T:Dlrsoft.VBScript.Parser.Tree">
 	<summary>
- Constructs a new parse tree for a comparison case clause.
+ The root class of all trees.
  </summary>
-	<param name="isLocation">The location of the 'Is', if any.</param>
-	<param name="comparisonOperator">The comparison operator used.</param>
-	<param name="operatorLocation">The location of the comparison operator.</param>
-	<param name="operand">The operand of the comparison.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.Charset">
+	<summary>
+ The character set of a Declare statement.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.RaiseEventLocation">
+	<summary>
+ The location of the 'RaiseEvent'.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.Parameters">
+	<summary>
+ The accessor's parameters.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.Statements">
+	<summary>
+ The statements in the accessor.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.EndStatement">
+	<summary>
+ The End declaration for the accessor.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a new parse tree for a property accessor.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="raiseEventLocation">The location of the 'RaiseEvent'.</param>
+	<param name="parameters">The parameters of the declaration.</param>
+	<param name="statements">The statements in the declaration.</param>
+	<param name="endStatement">The end block declaration, if any.</param>
 	<param name="span">The location of the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ComparisonCaseClause">
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration">
 	<summary>
- A parse tree for a case clause that compares values.
+ A parse tree for a RaiseEvent property accessor.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ExternalSubDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Charset,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.StringLiteralExpression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.StringLiteralExpression,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
+	<summary>
+ Constructs a parse tree for a Declare Sub statement.
+ </summary>
+	<param name="attributes">The attributes for the parse tree.</param>
+	<param name="modifiers">The modifiers for the parse tree.</param>
+	<param name="keywordLocation">The location of the keyword.</param>
+	<param name="charsetLocation">The location of the 'Ansi', 'Auto' or 'Unicode', if any.</param>
+	<param name="charset">The charset.</param>
+	<param name="subLocation">The location of 'Sub'.</param>
+	<param name="name">The name of the declaration.</param>
+	<param name="libLocation">The location of 'Lib', if any.</param>
+	<param name="libLiteral">The library, if any.</param>
+	<param name="aliasLocation">The location of 'Alias', if any.</param>
+	<param name="aliasLiteral">The alias, if any.</param>
+	<param name="parameters">The parameters of the declaration.</param>
+	<param name="span">The location of the parse tree.</param>
+	<param name="comments">The comments for the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ExternalSubDeclaration">
+	<summary>
+ A parse tree for a Declare Sub statement.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.BinaryOperatorExpression.LeftOperand">
 	<summary>
@@ -3846,63 +3827,6 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.InstanceExpression">
 	<summary>
  A parse tree for Me, MyBase or MyClass.
- </summary>
-</member><member name="T:Dlrsoft.VBScript.Parser.Charset">
-	<summary>
- The character set of a Declare statement.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.ExternalSubDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.ModifierCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Charset,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.SimpleName,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.StringLiteralExpression,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.StringLiteralExpression,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a parse tree for a Declare Sub statement.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="modifiers">The modifiers for the parse tree.</param>
-	<param name="keywordLocation">The location of the keyword.</param>
-	<param name="charsetLocation">The location of the 'Ansi', 'Auto' or 'Unicode', if any.</param>
-	<param name="charset">The charset.</param>
-	<param name="subLocation">The location of 'Sub'.</param>
-	<param name="name">The name of the declaration.</param>
-	<param name="libLocation">The location of 'Lib', if any.</param>
-	<param name="libLiteral">The library, if any.</param>
-	<param name="aliasLocation">The location of 'Alias', if any.</param>
-	<param name="aliasLiteral">The alias, if any.</param>
-	<param name="parameters">The parameters of the declaration.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.ExternalSubDeclaration">
-	<summary>
- A parse tree for a Declare Sub statement.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.RaiseEventLocation">
-	<summary>
- The location of the 'RaiseEvent'.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.Parameters">
-	<summary>
- The accessor's parameters.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.Statements">
-	<summary>
- The statements in the accessor.
- </summary>
-</member><member name="P:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.EndStatement">
-	<summary>
- The End declaration for the accessor.
- </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration.#ctor(Dlrsoft.VBScript.Parser.AttributeBlockCollection,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.ParameterCollection,Dlrsoft.VBScript.Parser.StatementCollection,Dlrsoft.VBScript.Parser.EndBlockDeclaration,Dlrsoft.VBScript.Parser.Span,System.Collections.Generic.IList{Dlrsoft.VBScript.Parser.Comment})">
-	<summary>
- Constructs a new parse tree for a property accessor.
- </summary>
-	<param name="attributes">The attributes for the parse tree.</param>
-	<param name="raiseEventLocation">The location of the 'RaiseEvent'.</param>
-	<param name="parameters">The parameters of the declaration.</param>
-	<param name="statements">The statements in the declaration.</param>
-	<param name="endStatement">The end block declaration, if any.</param>
-	<param name="span">The location of the parse tree.</param>
-	<param name="comments">The comments for the parse tree.</param>
-</member><member name="T:Dlrsoft.VBScript.Parser.RaiseEventAccessorDeclaration">
-	<summary>
- A parse tree for a RaiseEvent property accessor.
  </summary>
 </member><member name="P:Dlrsoft.VBScript.Parser.VariableName.Name">
 	<summary>
@@ -4010,6 +3934,73 @@ Dlrsoft.VBParser
 </member><member name="T:Dlrsoft.VBScript.Parser.OnErrorType">
 	<summary>
  The type of an On Error statement.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralToken.Literal">
+	<summary>
+ The value of the literal.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralToken.TypeCharacter">
+	<summary>
+ The type character of the literal.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.IntegerLiteralToken.IntegerBase">
+	<summary>
+ The integer base of the literal.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.IntegerLiteralToken.#ctor(System.Int32,Dlrsoft.VBScript.Parser.IntegerBase,Dlrsoft.VBScript.Parser.TypeCharacter,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new integer literal.
+ </summary>
+	<param name="literal">The literal value.</param>
+	<param name="integerBase">The integer base of the literal.</param>
+	<param name="typeCharacter">The type character of the literal.</param>
+	<param name="span">The location of the literal.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.IntegerLiteralToken">
+	<summary>
+ An integer literal.
+ </summary>
+</member><member name="T:Dlrsoft.VBScript.Parser.TokenType">
+	<summary>
+ The type of a token.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ComparisonCaseClause.IsLocation">
+	<summary>
+ The location of the 'Is', if any.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ComparisonCaseClause.ComparisonOperator">
+	<summary>
+ The comparison operator used in the case clause.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ComparisonCaseClause.OperatorLocation">
+	<summary>
+ The location of the comparison operator.
+ </summary>
+</member><member name="P:Dlrsoft.VBScript.Parser.ComparisonCaseClause.Operand">
+	<summary>
+ The operand of the case clause.
+ </summary>
+</member><member name="M:Dlrsoft.VBScript.Parser.ComparisonCaseClause.#ctor(Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.OperatorType,Dlrsoft.VBScript.Parser.Location,Dlrsoft.VBScript.Parser.Expression,Dlrsoft.VBScript.Parser.Span)">
+	<summary>
+ Constructs a new parse tree for a comparison case clause.
+ </summary>
+	<param name="isLocation">The location of the 'Is', if any.</param>
+	<param name="comparisonOperator">The comparison operator used.</param>
+	<param name="operatorLocation">The location of the comparison operator.</param>
+	<param name="operand">The operand of the comparison.</param>
+	<param name="span">The location of the parse tree.</param>
+</member><member name="T:Dlrsoft.VBScript.Parser.ComparisonCaseClause">
+	<summary>
+ A parse tree for a case clause that compares values.
+ </summary>
+</member><member name="F:Dlrsoft.VBScript.Parser.LanguageVersion.VisualBasic71">
+	<summary>Visual Basic 7.1</summary>
+	<remarks>Shipped in Visual Basic 2003</remarks>
+</member><member name="F:Dlrsoft.VBScript.Parser.LanguageVersion.VisualBasic80">
+	<summary>Visual Basic 8.0</summary>
+	<remarks>Shipped in Visual Basic 2005</remarks>
+</member><member name="T:Dlrsoft.VBScript.Parser.LanguageVersion">
+	<summary>
+ The version of the language you want.
  </summary>
 </member>
 </members>
