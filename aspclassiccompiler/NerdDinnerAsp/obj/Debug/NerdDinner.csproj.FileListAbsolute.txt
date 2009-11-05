@@ -1,7 +1,0 @@
-C:\downloads\dev\aspnetmvc\NerdDinner_1.0\NerdDinner 1.0\NerdDinner\bin\NerdDinner.dll
-C:\downloads\dev\aspnetmvc\NerdDinner_1.0\NerdDinner 1.0\NerdDinner\bin\NerdDinner.pdb
-C:\downloads\dev\aspnetmvc\NerdDinner_1.0\NerdDinner 1.0\NerdDinner\bin\System.Web.Mvc.dll
-C:\downloads\dev\aspnetmvc\NerdDinner_1.0\NerdDinner 1.0\NerdDinner\bin\System.Web.Mvc.xml
-C:\downloads\dev\aspnetmvc\NerdDinner_1.0\NerdDinner 1.0\NerdDinner\obj\Debug\ResolveAssemblyReference.cache
-C:\downloads\dev\aspnetmvc\NerdDinner_1.0\NerdDinner 1.0\NerdDinner\obj\Debug\NerdDinner.dll
-C:\downloads\dev\aspnetmvc\NerdDinner_1.0\NerdDinner 1.0\NerdDinner\obj\Debug\NerdDinner.pdb
