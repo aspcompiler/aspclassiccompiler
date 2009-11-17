@@ -240,7 +240,7 @@ Dlrsoft.VBParser
 	<summary>
  Whether the location is a valid location.
  </summary>
-</member><member name="M:Dlrsoft.VBScript.Parser.Location.#ctor(System.Int64,System.Int64,System.Int64)">
+</member><member name="M:Dlrsoft.VBScript.Parser.Location.#ctor(System.Int32,System.Int32,System.Int32)">
 	<summary>
  Constructs a new Location for a particular source location.
  </summary>
