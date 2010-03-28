@@ -16,7 +16,7 @@
         <% Html.RenderPartial("header") %>
 
         <div id="main">
-            <% Html.RenderPartial("DinnerForm"); %>
+            <% Html.RenderPartial("DinnerForm") %>
         </div>
     </div>
 </body>
