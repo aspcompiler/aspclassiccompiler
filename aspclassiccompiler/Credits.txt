@@ -1,0 +1,14 @@
+ASP Classic Compiler
+Copyright 2009-2011 Li Chen
+
+THIRD-PARTY CREDITS AND COPYRIGHT NOTICES GO HERE
+
+MvcContrib includes or is derivative of works distributed under the licenses listed below. The full text for most of the licenses listed below can be found in the LICENSE.txt file accompanying each work. The original copyright notices have been preserved within the respective files and or packages. Please refer to the specific files and/or packages for more detailed information about the authors, copyright notices, and licenses.
+
+3rd Party Libraries
+VBParser
+-----------------
+Website: http://www.panopticoncentral.net/archive/2006/03/27/11531.aspx
+Copyright: (c) 2006 Paul Vick
+License: Shared Source License
+

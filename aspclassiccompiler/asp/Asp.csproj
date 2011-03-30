@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F076A2D0-5200-42D7-9AEA-9E1260EFB138}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dlrsoft.Asp</RootNamespace>
+    <AssemblyName>Dlrsoft.Asp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\library\35\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\library\35\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\library\35\Microsoft.Scripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AspHandlerConfiguration.cs" />
+    <Compile Include="AspHelper.cs" />
+    <Compile Include="AspHost.cs" />
+    <Compile Include="AspHostConfiguration.cs" />
+    <Compile Include="BuiltInObjects\AspApplication.cs" />
+    <Compile Include="BuiltInObjects\AspStaticObjectsVariantDictionary.cs" />
+    <Compile Include="BuiltInObjects\AspStringList.cs" />
+    <Compile Include="BuiltInObjects\AspVariantDictionary.cs" />
+    <Compile Include="BuiltInObjects\AspWriteCookie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuiltInObjects\AspCookieCollection.cs" />
+    <Compile Include="BuiltInObjects\AspError.cs" />
+    <Compile Include="BuiltInObjects\AspForm.cs" />
+    <Compile Include="BuiltInObjects\AspFormValue.cs" />
+    <Compile Include="BuiltInObjects\AspNameValueCollection.cs" />
+    <Compile Include="BuiltInObjects\AspObjectContext.cs" />
+    <Compile Include="BuiltInObjects\AspReadCookie.cs" />
+    <Compile Include="BuiltInObjects\AspRequest.cs" />
+    <Compile Include="BuiltInObjects\AspResponse.cs" />
+    <Compile Include="BuiltInObjects\AspServer.cs" />
+    <Compile Include="BuiltInObjects\AspSession.cs" />
+    <Compile Include="CompiledPage.cs" />
+    <Compile Include="Mvc\AspView.cs" />
+    <Compile Include="Mvc\AspViewEngine.cs" />
+    <Compile Include="Mvc\RouteValueExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AspHandler.cs" />
+    <Compile Include="AspPageDom.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VBScript\VBScript.csproj">
+      <Project>{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}</Project>
+      <Name>VBScript</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ASPTypeLibrary">
+      <Guid>{D97A6DA0-A85C-11CF-83AE-00A0C90C2BD8}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

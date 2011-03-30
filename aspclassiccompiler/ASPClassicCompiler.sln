@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{244AF685-4E12-4893-89DA-939A2964C0FB}"
+	ProjectSection(SolutionItems) = preProject
+		License.txt = License.txt
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Parser", "Parser\Parser.vbproj", "{57A0B340-BDA4-4DE3-B449-52B8C51D84B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VBScript", "VBScript\VBScript.csproj", "{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp", "asp\Asp.csproj", "{F076A2D0-5200-42D7-9AEA-9E1260EFB138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspWebApp", "AspWebApp\AspWebApp.csproj", "{24BF0EA3-2D82-4E85-B13D-EA9279F58812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdDinnerAsp", "NerdDinnerAsp\NerdDinnerAsp.csproj", "{328C148C-DBEE-41A4-B1C7-104CBB216556}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57A0B340-BDA4-4DE3-B449-52B8C51D84B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A0B340-BDA4-4DE3-B449-52B8C51D84B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A0B340-BDA4-4DE3-B449-52B8C51D84B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A0B340-BDA4-4DE3-B449-52B8C51D84B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F076A2D0-5200-42D7-9AEA-9E1260EFB138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F076A2D0-5200-42D7-9AEA-9E1260EFB138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F076A2D0-5200-42D7-9AEA-9E1260EFB138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F076A2D0-5200-42D7-9AEA-9E1260EFB138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24BF0EA3-2D82-4E85-B13D-EA9279F58812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BF0EA3-2D82-4E85-B13D-EA9279F58812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BF0EA3-2D82-4E85-B13D-EA9279F58812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BF0EA3-2D82-4E85-B13D-EA9279F58812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328C148C-DBEE-41A4-B1C7-104CBB216556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328C148C-DBEE-41A4-B1C7-104CBB216556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328C148C-DBEE-41A4-B1C7-104CBB216556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328C148C-DBEE-41A4-B1C7-104CBB216556}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
