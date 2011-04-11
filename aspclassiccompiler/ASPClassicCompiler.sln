@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspWebApp", "AspWebApp\AspW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdDinnerAsp", "NerdDinnerAsp\NerdDinnerAsp.csproj", "{328C148C-DBEE-41A4-B1C7-104CBB216556}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VBScriptTest", "VBScriptTest\VBScriptTest.csproj", "{3153B5A6-B372-46D0-A10B-0CC4C4FBAE9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{328C148C-DBEE-41A4-B1C7-104CBB216556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{328C148C-DBEE-41A4-B1C7-104CBB216556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{328C148C-DBEE-41A4-B1C7-104CBB216556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3153B5A6-B372-46D0-A10B-0CC4C4FBAE9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3153B5A6-B372-46D0-A10B-0CC4C4FBAE9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3153B5A6-B372-46D0-A10B-0CC4C4FBAE9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3153B5A6-B372-46D0-A10B-0CC4C4FBAE9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -89,6 +89,7 @@
     <Compile Include="Runtime\DynamicObjectHelpers.cs" />
     <Compile Include="Runtime\ErrObject.cs" />
     <Compile Include="Runtime\HelperFunctions.cs" />
+    <Compile Include="Runtime\IAssert.cs" />
     <Compile Include="Runtime\InvokeMemberBinderKey.cs" />
     <Compile Include="Runtime\ITrace.cs" />
     <Compile Include="Runtime\RuntimeHelpers.cs" />
