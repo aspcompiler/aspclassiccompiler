@@ -55,10 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirectoryWalker.cs" />
     <Compile Include="NunitAssert.cs" />
+    <Compile Include="UnmanagedVBScriptTest.cs" />
+    <Compile Include="UnmangedVBScriptHost.cs" />
     <Compile Include="VBScriptTestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestRunner.cs" />
+    <Compile Include="VBscriptDotNetTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VBScript\VBScript.csproj">
@@ -68,6 +71,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="VBScripts\DataTypes.vbs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSScriptControl">
+      <Guid>{0E59F1D2-1FBE-11D0-8FF2-00A0D10038BC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

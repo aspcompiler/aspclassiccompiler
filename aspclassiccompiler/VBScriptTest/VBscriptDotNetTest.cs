@@ -10,9 +10,9 @@ namespace Dlrsoft.VBScriptTest
     /// Summary description for UnitTest1
     /// </summary>
     [TestFixture]
-    public class TestRunner
+    public class VBscriptDotNetTest
     {
-        public TestRunner()
+        public VBscriptDotNetTest()
         {
             //
             // TODO: Add constructor logic here
@@ -62,13 +62,20 @@ namespace Dlrsoft.VBScriptTest
         [Test]
         public void RunTest()
         {
-            VBScriptTestHelper.Walk(
-                Path.Combine(VBScriptTestHelper.AssemblyDirectory, "../../VBScripts"),
+            DirectoryWalker.Walk(
+                Path.Combine(DirectoryWalker.AssemblyDirectory, "../../VBScripts"),
                 f =>
                 {
                     if (f.EndsWith(".vbs", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        VBScriptTestHelper.Run(f);
+                        try
+                        {
+                            VBScriptTestHelper.Run(f);
+                        }
+                        catch (Exception ex)
+                        {
+                            Assert.Fail(f + ":" + ex.Message);
+                        }
                     }
                 }
             );
