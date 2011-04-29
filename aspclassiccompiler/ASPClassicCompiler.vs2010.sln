@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.VS2010", "asp\Asp.VS201
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspWebApp.VS2010", "AspWebApp\AspWebApp.VS2010.csproj", "{24BF0EA3-2D82-4E85-B13D-EA9279F58812}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VBSC.VS2010", "VBSC\VBSC.VS2010.csproj", "{556BAE6E-AA67-48C7-ACD6-1AB0AA930197}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{24BF0EA3-2D82-4E85-B13D-EA9279F58812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24BF0EA3-2D82-4E85-B13D-EA9279F58812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24BF0EA3-2D82-4E85-B13D-EA9279F58812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556BAE6E-AA67-48C7-ACD6-1AB0AA930197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556BAE6E-AA67-48C7-ACD6-1AB0AA930197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556BAE6E-AA67-48C7-ACD6-1AB0AA930197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556BAE6E-AA67-48C7-ACD6-1AB0AA930197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

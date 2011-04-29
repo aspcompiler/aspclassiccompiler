@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Dynamic;
-#if USE35
 using Microsoft.Scripting.Hosting;
+#if USE35
 using Microsoft.Scripting.Ast;
 #else
 using System.Linq.Expressions;
