@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SLVBParser", "Parser\SLVBParser.vbproj", "{FAE34487-11A6-4EE2-96BB-7F73C7611097}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLVBScript", "VBScript\SLVBScript.csproj", "{1EDAA0A6-FACB-4C7C-8D98-5564B4B49E30}"

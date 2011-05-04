@@ -9,7 +9,7 @@ namespace Dlrsoft.VBScript.Compiler
     public class VBScriptSourceMapper : ISourceMapper
     {
         //Here the range is start line number and the end line number
-        private ArrayList _spans = new ArrayList(); //use ArrayList so that we can use the binary search method
+        private List<SourceSpan> _spans = new List<SourceSpan>(); //use ArrayList so that we can use the binary search method
         private IDictionary<SourceSpan, DocSpan> _mappings = new Dictionary<SourceSpan, DocSpan>();
         static private SpanComparer _comparer = new SpanComparer();
 

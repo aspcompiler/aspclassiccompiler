@@ -83,7 +83,7 @@ namespace Dlrsoft.VBScript.Compiler
         public static LineColumn GetLineColumn(Range[] lineRanges, int index)
         {
             IComparer comparer = new RangeComparer();
-            int i = Array.BinarySearch(lineRanges, index, comparer);
+            int i = Array.BinarySearch(lineRanges, 0, lineRanges.Length, index, comparer);
             return new LineColumn(i + 1, index - lineRanges[i].Start + 1);
         }
 
@@ -154,17 +154,17 @@ namespace Dlrsoft.VBScript.Compiler
         #endregion
     }
 
-    internal class SpanComparer : IComparer
+    internal class SpanComparer : IComparer<SourceSpan>
     {
         #region IComparer Members
 
-        public int Compare(object x, object y)
+        public int Compare(SourceSpan x, SourceSpan y)
         {
-            if (((SourceSpan)x).End.Line < ((SourceSpan)y).Start.Line)
+            if (x.End.Line < y.Start.Line)
             {
                 return -1;
             }
-            else if (((SourceSpan)x).Start.Line > ((SourceSpan)y).End.Line)
+            else if (x.Start.Line > y.End.Line)
             {
                 return 1;
             }
