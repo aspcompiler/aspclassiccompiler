@@ -50,7 +50,7 @@ namespace Dlrsoft.Asp
 
         public override string ToString()
         {
-            if (_cookie == null) return null;
+            if (_cookie == null) return "";
 
             StringBuilder sb = new StringBuilder();
             bool first = true;

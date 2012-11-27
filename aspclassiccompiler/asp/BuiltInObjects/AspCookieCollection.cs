@@ -46,6 +46,9 @@ namespace Dlrsoft.Asp.BuiltInObjects
                 else
                     cookie = _cookiecollection[(string)key];
 
+                if (cookie == null)
+                    return "";
+
                 if (_request)
                     return new AspReadCookie(cookie);
                 else
