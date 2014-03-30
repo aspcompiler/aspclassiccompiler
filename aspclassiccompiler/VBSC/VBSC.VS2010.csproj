@@ -48,6 +48,7 @@
   <ItemGroup>
     <Content Include="test\array.vbs" />
     <Content Include="test\builtin.vbs" />
+    <Content Include="test\datetime.vbs" />
     <Content Include="test\foreach.vbs" />
     <Content Include="test\dotnet.vbs" />
     <Content Include="test\dountil.vbs" />

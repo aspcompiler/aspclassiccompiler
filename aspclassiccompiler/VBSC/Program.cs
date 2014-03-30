@@ -41,6 +41,8 @@ namespace Dlrsoft.VBScript
             //feo = engine.ExecuteFile(filename, feo);
             feo.SetVariable("response", System.Console.Out);
             compiledCode.Execute(feo);
+            Console.WriteLine("Type any key to continue..");
+            Console.Read();
         }
     }
 }
