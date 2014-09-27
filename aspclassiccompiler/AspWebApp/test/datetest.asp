@@ -20,6 +20,6 @@ next
 next
  %>
  <%=FormatDateTime(DateSerial(1997, 5, 5), 1) %>
-<%=FormatCurrentcy(10000000) %>
+<%=FormatCurrency(10000000) %>
 </body>
 </html>
