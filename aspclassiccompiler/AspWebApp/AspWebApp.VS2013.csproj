@@ -129,9 +129,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\asp\Asp.VS2010.csproj">
+    <ProjectReference Include="..\asp\Asp.VS2013.csproj">
       <Project>{F076A2D0-5200-42D7-9AEA-9E1260EFB138}</Project>
-      <Name>Asp.VS2010</Name>
+      <Name>Asp.VS2013</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

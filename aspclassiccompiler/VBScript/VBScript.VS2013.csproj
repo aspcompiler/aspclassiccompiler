@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dlrsoft.VBScript</RootNamespace>
+    <AssemblyName>Dlrsoft.VBScript</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release40\</OutputPath>
+    <DefineConstants>TRACE;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\library\40\Microsoft.Dynamic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\library\40\Microsoft.Scripting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binders\VBScriptBinaryOperationBinder.cs" />
+    <Compile Include="Binders\VBScriptCreateInstanceBinder.cs" />
+    <Compile Include="Binders\VBScriptGetIndexBinder.cs" />
+    <Compile Include="Binders\VBScriptGetMemberBinder.cs" />
+    <Compile Include="Binders\VBScriptInvokeBinder.cs" />
+    <Compile Include="Binders\VBScriptInvokeMemberBinder.cs" />
+    <Compile Include="Binders\VBScriptSetIndexBinder.cs" />
+    <Compile Include="Binders\VBScriptSetMemberBinder.cs" />
+    <Compile Include="Binders\VBScriptUnaryOperationBinder.cs" />
+    <Compile Include="Compiler\AnalysisScope.cs" />
+    <Compile Include="Compiler\DocSpan.cs" />
+    <Compile Include="Compiler\ISourceMapper.cs" />
+    <Compile Include="Compiler\Set.cs" />
+    <Compile Include="Compiler\SourceUtil.cs" />
+    <Compile Include="Compiler\VBScriptAnalyzer.cs" />
+    <Compile Include="Compiler\VBScriptCompilerException.cs" />
+    <Compile Include="Compiler\VBScriptSourceCodeReader.cs" />
+    <Compile Include="Compiler\VBScriptSourceMapper.cs" />
+    <Compile Include="Compiler\VBScriptStringContentProvider.cs" />
+    <Compile Include="Compiler\VBScriptSyntaxError.cs" />
+    <Compile Include="Runtime\BuiltInConstants.cs" />
+    <Compile Include="Runtime\DynamicObjectHelpers.cs" />
+    <Compile Include="Runtime\ErrObject.cs" />
+    <Compile Include="Runtime\HelperFunctions.cs" />
+    <Compile Include="Runtime\IAssert.cs" />
+    <Compile Include="Runtime\InvokeMemberBinderKey.cs" />
+    <Compile Include="Runtime\ITrace.cs" />
+    <Compile Include="Runtime\RuntimeHelpers.cs" />
+    <Compile Include="hosting\VBScriptCode.cs" />
+    <Compile Include="Compiler\VBScriptGenerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="hosting\VBScriptContext.cs" />
+    <Compile Include="Runtime\StringExtensionsClass.cs" />
+    <Compile Include="Runtime\TraceHelper.cs" />
+    <Compile Include="Runtime\TypeModel.cs" />
+    <Compile Include="Runtime\TypeModelMetaObject.cs" />
+    <Compile Include="Runtime\VBScriptRuntimeException.cs" />
+    <Compile Include="VBScript.cs" />
+    <Compile Include="Runtime\BuiltInFunctions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Parser\Parser.VS2013.vbproj">
+      <Project>{57A0B340-BDA4-4DE3-B449-52B8C51D84B8}</Project>
+      <Name>Parser.VS2013</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

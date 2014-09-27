@@ -1,21 +1,21 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{244AF685-4E12-4893-89DA-939A2964C0FB}"
 	ProjectSection(SolutionItems) = preProject
 		License.txt = License.txt
 	EndProjectSection
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Parser.VS2010", "Parser\Parser.VS2010.vbproj", "{57A0B340-BDA4-4DE3-B449-52B8C51D84B8}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Parser.VS2013", "Parser\Parser.VS2013.vbproj", "{57A0B340-BDA4-4DE3-B449-52B8C51D84B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VBScript.VS2010", "VBScript\VBScript.VS2010.csproj", "{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VBScript.VS2013", "VBScript\VBScript.VS2013.csproj", "{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.VS2010", "asp\Asp.VS2010.csproj", "{F076A2D0-5200-42D7-9AEA-9E1260EFB138}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.VS2013", "asp\Asp.VS2013.csproj", "{F076A2D0-5200-42D7-9AEA-9E1260EFB138}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspWebApp.VS2010", "AspWebApp\AspWebApp.VS2010.csproj", "{24BF0EA3-2D82-4E85-B13D-EA9279F58812}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspWebApp.VS2013", "AspWebApp\AspWebApp.VS2013.csproj", "{24BF0EA3-2D82-4E85-B13D-EA9279F58812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VBSC.VS2010", "VBSC\VBSC.VS2010.csproj", "{556BAE6E-AA67-48C7-ACD6-1AB0AA930197}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VBSC.VS2013", "VBSC\VBSC.VS2013.csproj", "{556BAE6E-AA67-48C7-ACD6-1AB0AA930197}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

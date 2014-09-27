@@ -128,9 +128,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VBScript\VBScript.VS2010.csproj">
+    <ProjectReference Include="..\VBScript\VBScript.VS2013.csproj">
       <Project>{0846368D-EA96-4AC4-81AF-E4F9B78CE60B}</Project>
-      <Name>VBScript.VS2010</Name>
+      <Name>VBScript.VS2013</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
