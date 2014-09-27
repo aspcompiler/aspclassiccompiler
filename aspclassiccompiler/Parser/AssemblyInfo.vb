@@ -19,6 +19,4 @@ Imports System.Runtime.InteropServices
 <Assembly: CLSCompliant(True)> 
 <Assembly: ComVisible(False)> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-
-<Assembly: AssemblyFileVersionAttribute("0.6.2.34834")> 
+<Assembly: AssemblyVersion("0.7.*")> 
