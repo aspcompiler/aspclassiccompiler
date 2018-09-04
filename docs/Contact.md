@@ -1,0 +1,1 @@
+For general discussions, please use the project forum. If you have questions just for us, please use the contact user form. You might also visit [http://weblogs.asp.net/lichen/](http://weblogs.asp.net/lichen/) and use the contact user form there. Thanks.

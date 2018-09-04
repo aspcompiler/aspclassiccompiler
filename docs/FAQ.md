@@ -1,0 +1,15 @@
+## Which .Net Framework version does the ASP Classic Compiler support?
+We will support .Net Framework 2.0, 3.0, 3.5 and 4.0. Initially, we only support 2.0-3.5. We do not support 4.0 because building the current DLR source code with 4.0 requires a daily build of VS2010 that we cannot obtain. Hopefully, we will be able to supply a copy of ASP Classic Compiler for .Net Framework 4.0 when VS 2010 beta 2 is released.
+
+## What is the status of your project?
+At this time, we have implemented most features in VBScript 3.0 standard. It can [run](http://weblogs.asp.net/lichen/archive/2009/12/20/asp-classic-compiler-0-6-0-released-it-can-run-fmstocks-1-0.aspx) Microsoft end-to-end sample applications like FMStock. Still need to implement VBScript 5.0 features such as Class, Execute and Eval.
+
+## What does the version number mean?
+Before 1.0, we used version numbers to represent the % of work completed to reach 1.0. So version 0.5.1.31188. would mean we are at 51%. The build number 31188 corresponds to the DLR changeset number so that you know the DLR version we are using in case you use other DLR languages in the same AppDomain.
+
+## When are you going to release the 1.0 version?
+We are not able to commit to any schedule yet. We hope to release shortly after VS2010 is released or Dynamic Language Runtime 1.0 is released. We have overcome most major technical challenges but still have lots of loose ends to work on. That said, it is possible to focus our efforts on making some applications run correctly even before the general release. [Contact](Contact) us if you are interested in it.
+
+## There are a huge number of ASP pages out there. How can you be compatible with all of them?
+Compiler writers work at the nuts and bolts level. We are concerned with the behavior of operators, assignments and method calls, etc. as well as all the implicit conversions involved. So we are dealing with a much smaller set of cases. We expect the system to be right if it is right at the nuts and bolts level. That said, to make VBScript.net right is still a huge task without a formal specification. There are many caveats in VBScript. Fortunately, [http://blogs.msdn.com/ericlippert/archive/tags/VBScript/default.aspx](Eric Lippert's blog) provides a lot more information. Some of the behavior is actually [http://blogs.msdn.com/ericlippert/archive/2005/03/23/vbscript-quiz-answers-part-eight.aspx](bugs that could not be fixed). So the answer is that we are not able to be and probably do not want to be 100% backward compatible. We will apply some common sense, encourage good practices and hopefully come out with a compiler that it is compatible with most of the real-world ASP pages. We will break away from some old problems and hopefully can move forward with a cleaner product. We certainly hope we will do much better than any of those ASP code converters on the market because we are not concerned with code readability but rather concerned with syntactic compatibility. Our development is very much spec and test driven at this point.
+

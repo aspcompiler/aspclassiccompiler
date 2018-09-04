@@ -1,0 +1,5 @@
+This project needs contributors to be viable. We need contributor of all technical capabilities, from writing a test case, and example, to working on the compiler.
+
+To contribute to the project, go to the "Source Code" tab and click fork. You can then work in your fork. When you are ready to contribute your code, send a pull request. We will review your code and either accept or reject. Please fork once per idea to keep the change small so that it can be reviewed easily. Once you have a few successful contributions, you will be promoted to the Developer role.
+
+This project uses Mercurial source control. Mercurial is thest best solution for open source development today. If you are not familiar with Mercurial, visit [Using Mercurial on Codeplex](http://codeplex.codeplex.com/wikipage?title=Using%20TortoiseHG%20with%20CodePlex) . Be sure to listen to [Rob Conery 's excellent tutorial](http://tekpub.com/codeplex). Also visit [hginit](http://hginit.com/) when you are ready for the next step. Mercurial promotes forking. We will be using workflow similar to [the Orchard Project](http://www.orchardproject.net/docs/Contributing-patches.ashx).
